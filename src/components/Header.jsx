@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import talktalk from '../assets/talktalk.png';
-import male from '../assets/male.jpg';
-import { IoIosArrowDown } from 'react-icons/io';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { IoCloseOutline } from 'react-icons/io5';
+import { IoIosArrowDown } from 'react-icons/io';
+import talktalk from '../assets/talktalk.png';
+import React, { useState } from 'react';
+import male from '../assets/male.jpg';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

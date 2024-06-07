@@ -1,50 +1,50 @@
 /* eslint-disable react/prop-types */
 // import Swiper core and required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination } from "swiper/modules";
 
-import img from '../assets/gif2-transparente.gif';
+import img from "../../../assets/gif2-transparente.gif";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/bundle';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/bundle";
+import "swiper/css/pagination";
 
-import { useEffect, useState } from 'react';
-import Accordion from './Accordion';
-import CardContent from './CardContent';
-import { FaChevronDown } from 'react-icons/fa';
+import { useEffect, useState } from "react";
+import Accordion from "../../../components/Accordion";
+import CardContent from "../../../components/CardContent";
+import { FaChevronDown } from "react-icons/fa";
 
 const data = [
   {
-    color: '#00afff',
+    color: "#00afff",
   },
   {
-    color: '#db00d6',
+    color: "#db00d6",
   },
   {
-    color: '#69e300',
+    color: "#69e300",
   },
   {
-    color: '#ffb700',
+    color: "#ffb700",
   },
   {
-    color: '#fc7979',
+    color: "#fc7979",
   },
   {
-    color: '#c57e37',
+    color: "#c57e37",
   },
   {
-    color: '#ebd000',
+    color: "#ebd000",
   },
   {
-    color: '#FF7F50',
+    color: "#FF7F50",
   },
 ];
 
 const CarouselResponsive = () => {
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState("");
 
   // const slideTo = (index) => {
   //   if (swiper) swiper.slideTo(index);
@@ -100,15 +100,15 @@ const Card = ({ color, isActive, setColor }) => {
     <div
       style={{ border: isActive ? `2px solid ${color}` : null }}
       className={` pt-10 overflow-hidden card rounded-xl text-white w-full ${
-        isActive ? 'bg-grayDark w-96' : null
+        isActive ? "bg-grayDark w-96" : null
       }`}
     >
       <div className="h-full">
-        <div className={`${isActive ? 'flex-1' : 'card__imgBox'}`}>
+        <div className={`${isActive ? "flex-1" : "card__imgBox"}`}>
           <img
             src={img}
             alt=""
-            className={`mx-auto object-contain ${isActive ? 'h-48' : 'h-44'}`}
+            className={`mx-auto object-contain ${isActive ? "h-48" : "h-44"}`}
           />
         </div>
         <div className="card__content mt-5" style={{ flex: 2 }}>
@@ -118,7 +118,7 @@ const Card = ({ color, isActive, setColor }) => {
 
           <div
             className="grid transition-all mt-5"
-            style={{ gridTemplateRows: isOpen ? '1fr' : '0fr' }}
+            style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
           >
             <div className="overflow-hidden">
               <div className="px-2">
@@ -134,7 +134,9 @@ const Card = ({ color, isActive, setColor }) => {
             className="py-2 mt-5 bg-white text-black w-full flex justify-center items-center gap-2"
           >
             View plan details
-            <FaChevronDown className={`transition-transform ${isOpen ? 'rotate-180' : null}`} />
+            <FaChevronDown
+              className={`transition-transform ${isOpen ? "rotate-180" : null}`}
+            />
           </button>
         </div>
       </div>

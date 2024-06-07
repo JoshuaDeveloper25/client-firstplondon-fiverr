@@ -2,7 +2,7 @@
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { FaCheck } from 'react-icons/fa';
 
-import img from '../assets/gif2-transparente.gif';
+import img from '../../../assets/gif2-transparente.gif';
 
 import { GrNext } from 'react-icons/gr';
 import { PiQuestionLight } from 'react-icons/pi';
@@ -13,8 +13,8 @@ import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { useEffect, useState } from 'react';
-import Accordion from './Accordion';
-import CardContent from './CardContent';
+import Accordion from '../../../components/Accordion';
+import CardContent from '../../../components/CardContent';
 
 const data = [
   {
