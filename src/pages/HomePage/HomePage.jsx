@@ -2,11 +2,20 @@ import CarouselResponsive from "./components/CarouselResponsive";
 import AccordionAlt from "../../components/AccordionAlt";
 import Carousel from "./components/Carousel";
 
+import { FaCheck } from "react-icons/fa6";
+import { FaGooglePlay } from "react-icons/fa";
+import { FaApple } from "react-icons/fa";
+
 import internationalCall from "../../assets/international-calls.png";
+import talkTalkTrustpilot from "../../assets/talktalk-trustpilot.png";
+import wristHeart from "../../assets/wrist-heart.png";
 import gif1 from "../../assets/get-sim-home.svg";
+import qrCode from "../../assets/qr-code.png";
+import cellImage from "../../assets/app.png";
 import cookie from "../../assets/cookie.png";
 import faq from "../../assets/faq.png";
 import sim from "../../assets/sim.png";
+import CarouselReviews from "./components/CarouselReviews";
 
 const HomePage = () => {
   return (
@@ -260,25 +269,363 @@ const HomePage = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-3">
-          <article className="relative bg-[#B6D7A8] p-2 rounded">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-12 px-3">
+          <article className="relative bg-[#B6D7A8] p-3 rounded-lg">
             <div>
               <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
                 Activate your Talktak SIM
               </h3>
-              <p className="my-3">Check our easy step by step guide.</p>
+              <p className="my-3 text-gray-700">
+                Check our easy step by{" "}
+                <span className="block">step guide.</span>
+              </p>
               <button className="bg-[#FFD966] rounded p-1">
                 Continue reading
               </button>
             </div>
 
             <div>
-              <img className="absolute w-20 right-0 bottom-0" src={sim} loading="lazy" decoding="async" />
+              <img
+                className="absolute w-20 right-0 bottom-0"
+                src={sim}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </article>
+
+          <article className="relative bg-[#C9DAF8] p-3 rounded-lg">
+            <div>
+              <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+                Talktalk PIN Code
+              </h3>
+              <p className="my-3 text-gray-700">
+                What is the default PIN for{" "}
+                <span className="block">your giffgaff SIM card?</span>
+              </p>
+              <button className="bg-[#FFD966] rounded p-1">
+                Continue reading
+              </button>
+            </div>
+
+            <div>
+              <img
+                className="absolute w-20 right-0 bottom-0"
+                src={sim}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </article>
+
+          <article className="relative bg-[#FCE5CD] p-3 rounded-lg">
+            <div>
+              <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+                Top Up your Talktalk SIM
+              </h3>
+              <p className="my-3 text-gray-700">
+                Top up, buy a plan, or{" "}
+                <span className="block">repurchase early, Learn</span> how in
+                seconds!
+              </p>
+              <button className="bg-[#FFD966] rounded p-1">
+                Continue reading
+              </button>
+            </div>
+
+            <div>
+              <img
+                className="absolute w-20 right-0 bottom-0"
+                src={sim}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </article>
+
+          <article className="relative bg-[#F9CB9C] p-3 rounded-lg">
+            <div>
+              <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+                Talktalk Voicemail
+              </h3>
+              <p className="my-3 text-gray-700">
+                Beyond messages, your
+                <span className="block">Voicemail lets you:</span>
+              </p>
+              <button className="bg-[#FFD966] rounded p-1">
+                Continue reading
+              </button>
+            </div>
+
+            <div>
+              <img
+                className="absolute w-20 right-0 bottom-0"
+                src={sim}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </article>
+
+          <article className="relative bg-[#CEC8E6] p-3 rounded-lg">
+            <div>
+              <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+                PUK, unlock your Talktalk SIM
+              </h3>
+              <p className="my-3 text-gray-700">
+                Blocked SIM? You'll need the
+                <span className="block">PUK code (after 3 wrong PINs).</span>
+              </p>
+              <button className="bg-[#FFD966] rounded p-1">
+                Continue reading
+              </button>
+            </div>
+
+            <div>
+              <img
+                className="absolute w-20 right-0 bottom-0"
+                src={sim}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </article>
+
+          <article className="relative bg-[#EAD1DC] p-3 rounded-lg">
+            <div>
+              <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+                Talktalk APN Internet Settings
+              </h3>
+              <p className="my-3 text-gray-700">
+                Mobile data down? An incorrect
+                <span className="block">APN might be blocking the</span> signal.
+              </p>
+              <button className="bg-[#FFD966] rounded p-1">
+                Continue reading
+              </button>
+            </div>
+
+            <div>
+              <img
+                className="absolute w-20 right-0 bottom-0"
+                src={sim}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </article>
         </div>
       </section>
       {/* -- International Calls END -- */}
+
+      {/* -- App START-- */}
+      <section className="container-page mt-16 px-2">
+        <div className="text-center mb-8">
+          <button className="border-2 border-green-500 text-green-800 font-bold bg-white rounded-full px-4">
+            App
+          </button>
+        </div>
+
+        <div className="flex flex-col-reverse md:flex-row justify-between md:items-start items-center gap-3">
+          <article className="text-secondary-color md:py-8 py-2">
+            <h2 className="max-w-md text-3xl font-bold">
+              Get the Talktalk app
+            </h2>
+
+            <p className="max-w-xl leading-6 my-3">
+              Download Talktalk app for Apple, Android and Huawei to manage your
+              account with the tap of your phone. The quickest, easiest way to
+              manage your giffgaff account on the go.
+            </p>
+
+            <div className="my-5 space-y-3">
+              <div className="flex items-center gap-4">
+                <div className="bg-green-600 text-white rounded-full">
+                  <FaCheck className="size-5 p-1" />
+                </div>
+
+                <div>
+                  <p className="text-secondary-color">
+                    Check how much data you have left.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-green-600 text-white rounded-full">
+                  <FaCheck className="size-5 p-1" />
+                </div>
+
+                <div>
+                  <p className="text-secondary-color">Buy or recur a plan.</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-green-600 text-white rounded-full">
+                  <FaCheck className="size-5 p-1" />
+                </div>
+
+                <div>
+                  <p className="text-secondary-color">
+                    Keep an eye on when your plan expires.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-green-600 text-white rounded-full">
+                  <FaCheck className="size-5 p-1" />
+                </div>
+
+                <div>
+                  <p className="text-secondary-color">
+                    Add credit or turn on auto top up.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-green-600 text-white rounded-full">
+                  <FaCheck className="size-5 p-1" />
+                </div>
+
+                <div>
+                  <p className="text-secondary-color">
+                    Pay with a saved card or PayPal.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-green-600 text-white rounded-full">
+                  <FaCheck className="size-5 p-1" />
+                </div>
+
+                <div>
+                  <p className="text-secondary-color">Redeem a voucher.</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-green-600 text-white rounded-full">
+                  <FaCheck className="size-5 p-1" />
+                </div>
+
+                <div>
+                  <p className="text-secondary-color">Access the community.</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-green-600 text-white rounded-full">
+                  <FaCheck className="size-5 p-1" />
+                </div>
+
+                <div>
+                  <p className="text-secondary-color">
+                    Add multiple giffgaff accounts.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="bg-green-600 text-white rounded-full">
+                  <FaCheck className="size-5 p-1" />
+                </div>
+
+                <div>
+                  <p className="text-secondary-color">
+                    Access thousands of WiFi hotspots across the UK with WiFi
+                    Extra.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h3 className="text-xl">
+              Scan the QR Code or Tap to download the App
+            </h3>
+            <div className="flex justify-center gap-5 items-center">
+              <div>
+                <img decoding="async" loading="lazy" src={qrCode} />
+              </div>
+              <div className="flex flex-col gap-2">
+                <button className="leading-[1] hover:opacity-55 animation-fade flex items-center gap-3 bg-[#E8E8E8] md:px-6 px-2 py-2 rounded-md">
+                  <div>
+                    <FaGooglePlay className="text-black text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-start text-xs">GET IT ON</p>{" "}
+                    <p className="text-black font-bold">Google Play</p>
+                  </div>
+                </button>
+
+                <button className="leading-[1] hover:opacity-55 animation-fade flex items-center gap-3 bg-[#E8E8E8] md:px-6 px-2 py-2 rounded-md">
+                  <div>
+                    <FaApple className="text-black text-2xl" />
+                  </div>
+                  <div>
+                    <p className="text-start text-xs">Download on the</p>{" "}
+                    <p className="text-black font-bold text-start">App Store</p>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article className="max-w-md mx-auto">
+            <img
+              decoding="async"
+              loading="lazy"
+              className="w-full rounded-3xl"
+              src={cellImage}
+              alt={"Imagen del Header"}
+            />
+          </article>
+        </div>
+      </section>
+      {/* -- App END-- */}
+
+      {/* -- Reviews START-- */}
+      <section className="container-page mt-16 px-2">
+        <div className="text-center mb-8">
+          <button className="border-2 border-green-500 text-green-800 font-bold bg-white rounded-full px-4">
+            Reviews
+          </button>
+        </div>
+
+        <div>
+          <img
+            src={wristHeart}
+            className="mx-auto"
+            decoding="async"
+            loading="lazy"
+          />
+          <h3 className="text-center text-green-800 text-xl font-bold my-5">
+            Customer satisfaction is TalkTalk's priority. That's why it is proud
+            to be one of the highest rated mobile network on Trustpilot, with
+            over 20,476 reviews.
+          </h3>
+        </div>
+
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-5">
+          <article className="md:col-span-2 col-span-full max-w-md md:mx-0 mx-auto">
+            <img
+              decoding="async"
+              loading="lazy"
+              className=""
+              src={talkTalkTrustpilot}
+              alt={"Imagen del Header"}
+            />
+          </article>
+
+          <article className="md:col-span-3 col-span-full">
+            <CarouselReviews />
+          </article>
+        </div>
+      </section>
+      {/* -- Reviews END-- */}
     </div>
   );
 };
