@@ -8,6 +8,7 @@ import "./index.css";
 
 // --> Pages
 import HomePage from "./pages/HomePage/HomePage.jsx";
+import Blog from "./pages/Blog/Blog.jsx";
 import Root from "./pages/Root.jsx";
 
 const router = createBrowserRouter([
@@ -18,6 +19,11 @@ const router = createBrowserRouter([
       {
         element: <HomePage />,
         index: true,
+      },
+
+      {
+        element: <Blog />,
+        path: "/blog",
       },
     ],
   },

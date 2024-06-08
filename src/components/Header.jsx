@@ -1,16 +1,16 @@
-import { RxHamburgerMenu } from 'react-icons/rx';
-import { IoCloseOutline } from 'react-icons/io5';
-import { IoIosArrowDown } from 'react-icons/io';
-import talktalk from '../assets/talktalk.png';
-import React, { useState } from 'react';
-import male from '../assets/male.jpg';
+import { RxHamburgerMenu } from "react-icons/rx";
+import { IoCloseOutline } from "react-icons/io5";
+import { IoIosArrowDown } from "react-icons/io";
+import talktalk from "../assets/talktalk.png";
+import React, { useState } from "react";
+import male from "../assets/male.jpg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="p-5">
-      <header className="bg-white rounded-xl py-5 px-5">
+      <header id="navbar" className="bg-white rounded-xl py-5 px-5">
         <div className="mx-auto">
           <div className="flex justify-between items-center">
             <div className="">
@@ -27,12 +27,12 @@ const Header = () => {
             <nav
               id=""
               className={`lg:relative z-50
-             ${isOpen ? null : 'hidden lg:block'}`}
+             ${isOpen ? null : "hidden lg:block"}`}
             >
               <ul
-                id={`${isOpen ? 'active-side' : null}`}
+                id={`${isOpen ? "active-side" : null}`}
                 className={`bg-white z-50 transition-transform
-              ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+              ${isOpen ? "translate-x-0" : "translate-x-full"}
               min-h-svh top-0 right-0 p-5 nav-menu absolute
              lg:translate-x-0 lg:p-0 lg:min-h-full lg:static flex flex-col lg:flex-row`}
               >

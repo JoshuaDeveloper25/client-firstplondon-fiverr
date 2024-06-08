@@ -9,9 +9,18 @@ body {
   font-weight: 400;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-margin-top: 10rem;
+}
+
 @layer components {
   .container-page {
     @apply max-w-[1200px] mx-auto;
+  }
+
+  .section-button {
+    @apply border-2 border-green-500 text-green-800 font-bold bg-white rounded-full px-4;
   }
 
   .desktop .swiper-slide-active .card {
@@ -610,7 +619,7 @@ html:has(#active-side) {
 }
 
 .animation-from-left {
-  animation: 1s animLeft ease-in-out backwards; 
+  animation: 1s animLeft ease-in-out backwards;
 }
 
 @keyframes animLeft {

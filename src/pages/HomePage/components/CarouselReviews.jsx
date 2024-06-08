@@ -70,7 +70,7 @@ const reviews = [
 
 const CarouselReviews = () => {
   return (
-    <div className="md:h-[100vh] relative">
+    <div className="relative">
       <div className="swiper-button image-swiper-button-next absolute z-50 cursor-pointer top-16 min-[1000px]:-right-3 right-0">
         <IoIosArrowForward className="text-white bg-black/50 rounded-full p-1 size-6" />
       </div>
