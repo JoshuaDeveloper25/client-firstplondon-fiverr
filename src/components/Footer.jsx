@@ -1,96 +1,240 @@
-import { FaTwitter } from "react-icons/fa";
+import { FaApple, FaGooglePlay, FaTwitter, FaYoutube } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { FaGooglePlusG } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import { IoIosArrowForward } from "react-icons/io";
-
-import React from 'react'
+import { Link } from "react-router-dom";
+import BackToTop from "./BackToTop";
 
 const Footer = () => {
-    return (
-        <footer id="footer">
-            <div className="footer-top">
-                <div className="max-w-5xl mx-auto px-4">
-                    <div className='grid sm:grid-cols-2 gap-4 md:grid-cols-4'>
+  return (
+    <>
+      <footer id="footer">
+        <div className="footer-top">
+          <div className="container-page mx-auto px-4">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:place-content-start place-content-center">
+              <div className="footer-links">
+                <h4>About Talktalk</h4>
 
-                        <div className="footer-info">
-                            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
-                                darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo.
-                                Amet volutpat consequat mauris nunc congue.</p>
-                        </div>
+                <ul>
+                  <li className="flex items-center ">
+                    <Link href="#">- Getting started on Talktalk</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Why Talktalk</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Community</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Roaming</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- International Calls</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- UK rates</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Talktap App</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- eSIM</Link>
+                  </li>
+                </ul>
+              </div>
 
-                        <div className="footer-links">
-                            <h4>Useful Links</h4>
-                            <ul>
-                                <li className="flex items-center gap-x-2"><IoIosArrowForward /><a href="#">Home</a></li>
-                                <li className="flex items-center gap-x-2"><IoIosArrowForward /><a href="#">About us</a></li>
-                                <li className="flex items-center gap-x-2"><IoIosArrowForward /><a href="#">Services</a></li>
-                                <li className="flex items-center gap-x-2"><IoIosArrowForward /><a href="#">Terms of service</a></li>
-                                <li className="flex items-center gap-x-2"><IoIosArrowForward /><a href="#">Privacy policy</a></li>
-                            </ul>
-                        </div>
+              <div className="footer-links">
+                <h4>SIM only deals</h4>
+                <ul>
+                  <li className="flex items-center ">
+                    <Link href="#">- Best SIM only deals</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Pay as you go deals</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Monthly rolling SIM deals</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Contract SIM deals</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Order your free SIM</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Activate your SIM</Link>
+                  </li>
+                </ul>
+              </div>
 
-                        <div className="footer-contact">
-                            <h4>Contact Us</h4>
-                            <p>
-                                A108 Adam Street <br />
-                                New York, NY 535022<br />
-                                United States <br />
-                                <strong>Phone:</strong> +1 5589 55488 55<br />
-                                <strong>Email:</strong> info@example.com<br />
-                            </p>
+              <div className="footer-links">
+                <h4>Step-by-step guides</h4>
+                <ul>
+                  <li className="flex items-center ">
+                    <Link href="#">- Switching to us</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Activate your Talktalk SIM</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- PIN Code</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Voicemail</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- PUK code</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- How to top-up</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- APN Internet Settings</Link>
+                  </li>
+                </ul>
+              </div>
 
-                            <div className="social-links">
-                                <a href="#" className="twitter">
-                                    <div className="flex justify-center">
-                                        <FaTwitter />
-                                    </div>
-                                </a>
-                                <a href="#" className="facebook">
-                                    <div className="flex justify-center">
-                                        <FaFacebookF />
-                                    </div>
-                                </a>
-                                <a href="#" className="instagram">
-                                    <div className="flex justify-center">
-                                        <FaInstagram />
-                                    </div>
-                                </a>
-                                <a href="#" className="google-plus">
-                                    <div className="flex justify-center">
-                                        <FaGooglePlusG />
-                                    </div>
-                                </a>
-                                <a href="#" className="linkedin">
-                                    <div className="flex justify-center">
-                                        <FaLinkedinIn />
-                                    </div>
-                                </a>
-                            </div>
+              <div className="footer-links">
+                <h4>Help</h4>
+                <ul>
+                  <li className="flex items-center ">
+                    <Link href="#">- Service updates</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- FAQs</Link>
+                  </li>
+                </ul>
+              </div>
 
-                        </div>
+              <div className="footer-links">
+                <h4>Contact Us</h4>
 
-                        <div className="footer-newsletter">
-                            <h4>Our Newsletter</h4>
-                            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore
-                                legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-                            <form action="" method="post">
-                                <input type="email" name="email" /><input type="submit" value="Subscribe" />
-                            </form>
-                        </div>
+                <ul>
+                  <li className="flex items-center ">
+                    <Link href="#">- Ask the community</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Ask a Talktalk agent</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- Contact us</Link>
+                  </li>
+                  <li className="flex items-center ">
+                    <Link href="#">- email: support@talktalk-sim.com</Link>
+                  </li>
+                </ul>
 
+                <div className="flex gap-3 my-3">
+                  <button className="flex-1 leading-[1] hover:opacity-55 animation-fade flex items-center gap-2 bg-[#E8E8E8] px-2 py-2 rounded-full">
+                    <div>
+                      <FaGooglePlay className="text-black text-base" />
                     </div>
+                    <div>
+                      <p className="text-start text-[.6rem] text-black">
+                        GET IT ON
+                      </p>{" "}
+                      <p className="text-black font-bold text-[.6rem]">
+                        Google Play
+                      </p>
+                    </div>
+                  </button>
+
+                  <button className="flex-1 leading-[1] hover:opacity-55 animation-fade flex items-center gap-2 bg-[#E8E8E8] px-2 py-2 rounded-full">
+                    <div>
+                      <FaApple className="text-black text-base" />
+                    </div>
+                    <div>
+                      <p className="text-start text-[.6rem] text-black">
+                        Download on
+                      </p>{" "}
+                      <p className="text-black font-bold text-[.6rem] text-start">
+                        App Store
+                      </p>
+                    </div>
+                  </button>
                 </div>
+
+                <div className="social-links pt-3">
+                  <a href="#" className="twitter">
+                    <div className="flex justify-center">
+                      <FaTwitter />
+                    </div>
+                  </a>
+                  <a href="#" className="facebook">
+                    <div className="flex justify-center">
+                      <FaFacebookF />
+                    </div>
+                  </a>
+                  <a href="#" className="linkedin">
+                    <div className="flex justify-center">
+                      <FaLinkedinIn />
+                    </div>
+                  </a>
+                  <a href="#" className="google-plus">
+                    <div className="flex justify-center">
+                      <FaYoutube />
+                    </div>
+                  </a>
+                  <a href="#" className="instagram">
+                    <div className="flex justify-center">
+                      <FaInstagram />
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <div className="container mx-auto">
-                <div className="copyright">
-                    &copy; Copyright <strong></strong>. All Rights Reserved
-                </div>
+            <div className="bg-white rounded-lg p-4 mt-5">
+              <p className="text-center">
+                This website, www.talktalkuksim.com, is intended to inform and
+                promote Talktalk´s plans, but we are not the official Talktalk
+                website.{" "}
+                <span className="md:block">
+                  If you want to visit the official Talktalk´s website, click on
+                  the following link: www.Talktalk.com
+                </span>
+              </p>
             </div>
-        </footer>
-    )
-}
+          </div>
+        </div>
+      </footer>
 
-export default Footer
+      <div className="bg-[#111] relative text-white lg:py-5 py-10 px-2">
+        <div className="container-page mx-auto">
+          <BackToTop />
+
+          <div className="flex gap-4 flex-col md:flex-row justify-between">
+            <div>
+              <h4 className="md:text-start text-center">
+                &copy; 2024 All Rights Reserved by www.talktalksim.com
+              </h4>
+            </div>
+
+            <ul className="flex md:justify-between justify-center flex-wrap text-white">
+              <li>
+                <Link>
+                  Privacy policy - <span className="me-1"></span>
+                </Link>
+              </li>
+              <li>
+                <Link>
+                  Cookies policy - <span className="me-1"></span>
+                </Link>
+              </li>
+              <li>
+                <Link>
+                  Terms & Conditions - <span className="me-1"></span>
+                </Link>
+              </li>
+              <li>
+                <Link>Sitemap</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Footer;

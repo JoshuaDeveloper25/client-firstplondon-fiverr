@@ -24,7 +24,7 @@ const FAQ = () => {
           </div>
         </div>
 
-        <div className="flex gap-6 mt-8">
+        <div className="flex flex-col sm:flex-row sm:gap-6 mt-8">
           <div className="flex-1">
             <AccordionAlt title={"What is included in TalkTalk plans?"} />
             <AccordionAlt title={"What is included in TalkTalk plans?"} />

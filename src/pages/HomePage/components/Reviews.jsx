@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Reviews = () => {
   return (
-    <section className="container-page mt-16 px-2">
+    <section className="container-page my-16 px-2">
       <div className="text-center mb-8">
         <Link to={"#"} className="section-button">
           Reviews
