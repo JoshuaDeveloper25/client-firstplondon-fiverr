@@ -617,33 +617,13 @@ html:has(#active-side) {
   overflow: hidden;
 }
 
-
-
-
-
 .animation-from-left {
-  opacity: 0;
-  transform: translateX(10rem);
-  transition: 0.5s, transform 0.5s;
-}
-
-.animation-from-right {
-  opacity: 0;
-  transform: translateX(-10rem);
-  transition:  0.5s, transform 0.5s;
-}
-
-.animate.animation-from-left {
-  animation: 1s animLeft ease-in-out forwards;
-}
-
-.animate.animation-from-right {
-  animation: 1s animRight ease-in-out forwards;
+  animation: 1s animLeft ease-in-out backwards;
 }
 
 @keyframes animLeft {
   0% {
-    transform: translateX(10rem);
+    transform: translateX(20rem);
     opacity: 0;
   }
 
@@ -653,13 +633,16 @@ html:has(#active-side) {
 
   100% {
     transform: translateX(0);
-    opacity: 1;
   }
+}
+
+.animation-from-right {
+  animation: 1s animRight ease-in-out backwards;
 }
 
 @keyframes animRight {
   0% {
-    transform: translateX(-10rem);
+    transform: translateX(-20rem);
     opacity: 0;
   }
 
@@ -669,6 +652,5 @@ html:has(#active-side) {
 
   100% {
     transform: translateX(0);
-    opacity: 1;
   }
 }

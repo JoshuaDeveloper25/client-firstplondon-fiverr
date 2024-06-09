@@ -1,71 +1,38 @@
 import gif1 from "../../../assets/get-sim-home.svg";
-import React, { useEffect, useRef } from 'react';
 
 const Header = () => {
-  const elementsRef = useRef([]);
-
-  useEffect(() => {
-    const callback = (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        } else {
-          entry.target.classList.remove('animate');
-        }
-      });
-    };
-
-    const options = {
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver(callback, options);
-
-    elementsRef.current.forEach(el => {
-      if (el) observer.observe(el);
-    });
-
-    return () => {
-      if (elementsRef.current) {
-        elementsRef.current.forEach(el => {
-          if (el) observer.unobserve(el);
-        });
-      }
-    };
-  }, []);
-
   return (
     <section id="flexibility" className="container-page md:px-0 px-2">
       <div className="flex flex-wrap justify-center gap-4">
-        <div className="min-w-[4rem] animation-from-right" ref={el => elementsRef.current[0] = el}>
+        <div className="min-w-[4rem] animation-from-right">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
         </div>
 
-        <div className="min-w-[4rem] animation-from-right" ref={el => elementsRef.current[1] = el}>
+        <div className="min-w-[4rem] animation-from-right">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
         </div>
 
-        <div className="min-w-[4rem] animation-from-right" ref={el => elementsRef.current[2] = el}>
+        <div className="min-w-[4rem] animation-from-right">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
         </div>
 
-        <div className="min-w-[4rem] animation-from-right" ref={el => elementsRef.current[3] = el}>
+        <div className="min-w-[4rem] animation-from-right">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
         </div>
 
-        <div className="min-w-[4rem] animation-from-left" ref={el => elementsRef.current[4] = el}>
+        <div className="min-w-[4rem] animation-from-left">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
         </div>
 
-        <div className="min-w-[4rem] animation-from-left" ref={el => elementsRef.current[5] = el}>
+        <div className="min-w-[4rem] animation-from-left">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
         </div>
 
-        <div className="min-w-[4rem] animation-from-left" ref={el => elementsRef.current[6] = el}>
+        <div className="min-w-[4rem] animation-from-left">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
         </div>
 
-        <div className="min-w-[4rem] animation-from-left" ref={el => elementsRef.current[7] = el}>
+        <div className="min-w-[4rem] animation-from-left">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
         </div>
       </div>
