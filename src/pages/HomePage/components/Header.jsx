@@ -1,8 +1,37 @@
 import gif1 from "../../../assets/get-sim-home.svg";
+import { useEffect } from "react";
+import { useRef } from "react";
 
 const Header = () => {
+  const flexibilityRef = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0 // La animación se activará cuando al menos el 50% de la sección sea visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Si la sección es visible en el viewport, añadir la clase de animación
+          flexibilityRef.current.classList.add("animation-active");
+        } else {
+          // Si la sección ya no es visible, remover la clase de animación
+          flexibilityRef.current.classList.remove("animation-active");
+        }
+      });
+    }, options);
+
+    observer.observe(flexibilityRef.current);
+
+    // Cleanup al desmontar el componente
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="flexibility" className="container-page md:px-0 px-2">
+    <section id="flexibility" className="overflow-visible container-page md:px-0 px-2" ref={flexibilityRef}>
       <div className="flex flex-wrap justify-center gap-4">
         <div className="min-w-[4rem] animation-from-right">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
