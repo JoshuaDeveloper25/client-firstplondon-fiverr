@@ -1,6 +1,7 @@
-import talkTalkTrustpilot from "../../../assets/talktalk-trustpilot.png";
 import CarouselReviews from "../components/CarouselReviews";
-import wristHeart from "../../../assets/wrist-heart.png";
+import wristHeart from "../../../assets/wrist-heart.webp";
+import fourStars from "../../../assets/trustpilot.png";
+import greenBg from "../../../assets/fondo-verde.jpg";
 import { Link } from "react-router-dom";
 
 const Reviews = () => {
@@ -15,7 +16,7 @@ const Reviews = () => {
       <div>
         <img
           src={wristHeart}
-          className="mx-auto"
+          className="mx-auto w-52"
           decoding="async"
           loading="lazy"
         />
@@ -27,14 +28,34 @@ const Reviews = () => {
       </div>
 
       <div className="grid gap-4 grid-cols-1 md:grid-cols-5">
-        <article className="md:col-span-2 col-span-full max-w-md md:mx-0 mx-auto">
-          <img
-            decoding="async"
-            loading="lazy"
-            className=""
-            src={talkTalkTrustpilot}
-            alt={"Imagen del Header"}
-          />
+        <article className="md:col-span-2 col-span-full max-w-md mx-auto sm:w-80">
+          <div>
+            <h2 className="bg-black text-white  text-center text-xl font-bold py-2">
+              TalkTalk | Trustpilot
+            </h2>
+          </div>
+
+          <div className="relative">
+            <img
+              decoding="async"
+              loading="lazy"
+              src={greenBg}
+            />
+
+            <div className="absolute top-0 flex flex-col justify-center w-full items-center h-full">
+              <div className="flex text-white justify-center gap-4 items-center">
+                <h3>Reviews 20.476</h3>
+                <div className="bg-white rounded-full h-2 w-2"></div>
+                <h3>Excelent</h3>
+              </div>
+              <img
+                className="w-36 mt-2"
+                decoding="async"
+                loading="lazy"
+                src={fourStars}
+              />
+            </div>
+          </div>
         </article>
 
         <article className="md:col-span-3 col-span-full">

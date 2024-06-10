@@ -1,4 +1,4 @@
-import blogImage from "../../../assets/blog-image.png";
+import blogImage from "../../../assets/blog-image.jpg";
 
 const Introduction = () => {
   return (

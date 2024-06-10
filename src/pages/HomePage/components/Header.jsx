@@ -1,4 +1,5 @@
-import gif1 from "../../../assets/get-sim-home.svg";
+import gif1 from "../../../assets/activate-sim.png";
+import gif2 from "../../../assets/get-sim-home.svg";
 import { useEffect } from "react";
 import { useRef } from "react";
 
@@ -31,7 +32,7 @@ const Header = () => {
   }, []);
 
   return (
-    <section id="flexibility" className="overflow-visible container-page md:px-0 px-2" ref={flexibilityRef}>
+    <section id="flexibility" className="overflow-visible container-page md:px-0 px-2 mt-14" ref={flexibilityRef}>
       <div className="flex flex-wrap justify-center gap-4">
         <div className="min-w-[4rem] animation-from-right">
           <div className="h-[10rem] w-[7rem] bg-amber-950"></div>
@@ -85,7 +86,7 @@ const Header = () => {
               Order your free SIM
             </h4>
             <img
-              className="absolute -top-4 -right-8 w-16"
+              className="absolute -top-4 -right-5 w-7"
               src={gif1}
               loading="lazy"
               decoding="async"
@@ -102,7 +103,7 @@ const Header = () => {
               </h4>
               <img
                 className="absolute -top-4 -right-8 w-16"
-                src={gif1}
+                src={gif2}
                 loading="lazy"
                 decoding="async"
               />

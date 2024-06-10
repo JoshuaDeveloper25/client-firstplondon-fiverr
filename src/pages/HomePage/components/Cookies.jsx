@@ -1,4 +1,4 @@
-import cookie from "../../../assets/cookie.png";
+import cookie from "../../../assets/cookies.gif";
 
 const Cookies = () => {
   return (

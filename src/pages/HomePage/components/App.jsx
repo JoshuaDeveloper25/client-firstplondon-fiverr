@@ -1,10 +1,11 @@
-import { FaGooglePlay } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa6";
-import { FaApple } from "react-icons/fa";
 
 import qrCode from "../../../assets/qr-code.png";
-import cellImage from "../../../assets/app.png";
+import cellImage from "../../../assets/app.gif";
 import { Link } from "react-router-dom";
+
+import googlePlay from "../../../assets/google-play-sectionApp.png";
+import appStore from "../../../assets/app-store-sectionApp.png";
 
 const App = () => {
   return (
@@ -133,30 +134,14 @@ const App = () => {
           <h3 className="text-xl">
             Scan the QR Code or Tap to download the App
           </h3>
-          <div className="flex justify-center gap-5 items-center">
+          <div className="flex justify-center gap-5 items-center mt-5">
             <div>
-              <img decoding="async" loading="lazy" src={qrCode} />
+              <img className="w-28" decoding="async" loading="lazy" src={qrCode} />
             </div>
             <div className="flex flex-col gap-2">
-              <button className="leading-[1] hover:opacity-55 animation-fade flex items-center gap-3 bg-[#E8E8E8] md:px-6 px-2 py-2 rounded-md">
-                <div>
-                  <FaGooglePlay className="text-black text-xl" />
-                </div>
-                <div>
-                  <p className="text-start text-xs">GET IT ON</p>{" "}
-                  <p className="text-black font-bold">Google Play</p>
-                </div>
-              </button>
+              <img className="w-28" src={googlePlay} loading="lazy" decoding="async" />
 
-              <button className="leading-[1] hover:opacity-55 animation-fade flex items-center gap-3 bg-[#E8E8E8] md:px-6 px-2 py-2 rounded-md">
-                <div>
-                  <FaApple className="text-black text-2xl" />
-                </div>
-                <div>
-                  <p className="text-start text-xs">Download on the</p>{" "}
-                  <p className="text-black font-bold text-start">App Store</p>
-                </div>
-              </button>
+              <img className="w-28" src={appStore} loading="lazy" decoding="async" />
             </div>
           </div>
         </article>

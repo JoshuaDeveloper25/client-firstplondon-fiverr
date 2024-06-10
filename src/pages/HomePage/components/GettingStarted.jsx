@@ -1,4 +1,10 @@
 import { Link } from "react-router-dom";
+
+import apn from "../../../assets/apn.png";
+import pin from "../../../assets/pin.png";
+import puk from "../../../assets/puk.png";
+import voicmail from "../../../assets/voicmail.png";
+import topup from "../../../assets/topup.webp";
 import sim from "../../../assets/sim.png";
 
 const GettingStarted = () => {
@@ -20,10 +26,10 @@ const GettingStarted = () => {
         </p>
       </div>
 
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-12 px-3">
-        <article className="relative bg-[#B6D7A8] p-3 rounded-lg">
-          <div>
-            <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-12 px-3">
+        <article className="relative gap-5 bg-[#B6D7A8] p-3 pb-0 rounded-lg">
+          <div className="pb-3 lg:text-start text-center">
+            <h3 className="text-[#674EA7] text-[1.12rem] font-bold">
               Activate your Talktak SIM
             </h3>
             <p className="my-3 text-gray-700">
@@ -34,9 +40,9 @@ const GettingStarted = () => {
             </button>
           </div>
 
-          <div>
+          <div className="self-end">
             <img
-              className="absolute w-20 right-0 bottom-0"
+              className="lg:absolute lg:mx-0 mx-auto right-0 top-9 w-20"
               src={sim}
               loading="lazy"
               decoding="async"
@@ -44,9 +50,9 @@ const GettingStarted = () => {
           </div>
         </article>
 
-        <article className="relative bg-[#C9DAF8] p-3 rounded-lg">
-          <div>
-            <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+        <article className="relative bg-[#C9DAF8] p-3 pb-0 rounded-lg">
+          <div className="pb-3 lg:text-start text-center">
+            <h3 className="text-[#674EA7] text-[1.12rem] font-bold">
               Talktalk PIN Code
             </h3>
             <p className="my-3 text-gray-700">
@@ -58,19 +64,19 @@ const GettingStarted = () => {
             </button>
           </div>
 
-          <div>
+          <div className="self-end">
             <img
-              className="absolute w-20 right-0 bottom-0"
-              src={sim}
+              className="lg:absolute lg:mx-0 mx-auto w-44 right-0 bottom-0"
+              src={pin}
               loading="lazy"
               decoding="async"
             />
           </div>
         </article>
 
-        <article className="relative bg-[#FCE5CD] p-3 rounded-lg">
-          <div>
-            <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+        <article className="relative bg-[#FCE5CD] p-3 pb-0 rounded-lg">
+          <div className="pb-3 lg:text-start text-center">
+            <h3 className="text-[#674EA7] text-[1.12rem] font-bold">
               Top Up your Talktalk SIM
             </h3>
             <p className="my-3 text-gray-700">
@@ -85,17 +91,17 @@ const GettingStarted = () => {
 
           <div>
             <img
-              className="absolute w-20 right-0 bottom-0"
-              src={sim}
+              className="lg:absolute lg:mx-0 mx-auto w-20 right-0 bottom-0"
+              src={topup}
               loading="lazy"
               decoding="async"
             />
           </div>
         </article>
 
-        <article className="relative bg-[#F9CB9C] p-3 rounded-lg">
-          <div>
-            <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+        <article className="relative bg-[#F9CB9C] p-3 pb-0 rounded-lg">
+          <div className="pb-3 lg:text-start text-center">
+            <h3 className="text-[#674EA7] text-[1.12rem] font-bold">
               Talktalk Voicemail
             </h3>
             <p className="my-3 text-gray-700">
@@ -107,19 +113,19 @@ const GettingStarted = () => {
             </button>
           </div>
 
-          <div>
+          <div className="self-end">
             <img
-              className="absolute w-20 right-0 bottom-0"
-              src={sim}
+              className="lg:absolute lg:mx-0 mx-auto w-40 right-0 bottom-0"
+              src={voicmail}
               loading="lazy"
               decoding="async"
             />
           </div>
         </article>
 
-        <article className="relative bg-[#CEC8E6] p-3 rounded-lg">
-          <div>
-            <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+        <article className="relative bg-[#CEC8E6] p-3 pb-0 rounded-lg">
+          <div className="pb-3 lg:text-start text-center">
+            <h3 className="text-[#674EA7] text-[1.12rem] font-bold">
               PUK, unlock your Talktalk SIM
             </h3>
             <p className="my-3 text-gray-700">
@@ -131,19 +137,19 @@ const GettingStarted = () => {
             </button>
           </div>
 
-          <div>
+          <div className="self-end">
             <img
-              className="absolute w-20 right-0 bottom-0"
-              src={sim}
+              className="lg:absolute lg:mx-0 mx-auto w-28 right-0 bottom-0"
+              src={puk}
               loading="lazy"
               decoding="async"
             />
           </div>
         </article>
 
-        <article className="relative bg-[#EAD1DC] p-3 rounded-lg">
-          <div>
-            <h3 className="text-[#674EA7] text-[1.2rem] font-bold">
+        <article className="relative bg-[#EAD1DC] p-3 pb-0 rounded-lg">
+          <div className="pb-3 lg:text-start text-center">
+            <h3 className="text-[#674EA7] text-[1.12rem] font-bold">
               Talktalk APN Internet Settings
             </h3>
             <p className="my-3 text-gray-700">
@@ -157,8 +163,8 @@ const GettingStarted = () => {
 
           <div>
             <img
-              className="absolute w-20 right-0 bottom-0"
-              src={sim}
+              className="lg:absolute lg:mx-0 mx-auto w-40 right-0 bottom-0"
+              src={apn}
               loading="lazy"
               decoding="async"
             />

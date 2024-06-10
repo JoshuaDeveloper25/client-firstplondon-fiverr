@@ -1,9 +1,14 @@
-import { FaApple, FaGooglePlay, FaTwitter, FaYoutube } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import BackToTop from "./BackToTop";
+
+import googlePlay from "../assets/googleplayfooter.png";
+import appStore from "../assets/appstorefooter.png";
+
+import twitter from "../assets/x.png";
+import facebook from "../assets/facebook.png";
+import linkedin from "../assets/linkedin.png";
+import youtube from "../assets/youtube.png";
+import instagram from "../assets/instagram.png";
 
 const Footer = () => {
   return (
@@ -125,61 +130,37 @@ const Footer = () => {
                 </ul>
 
                 <div className="flex gap-3 my-3">
-                  <button className="flex-1 leading-[1] hover:opacity-55 animation-fade flex items-center gap-2 bg-[#E8E8E8] px-2 py-2 rounded-full">
-                    <div>
-                      <FaGooglePlay className="text-black text-base" />
-                    </div>
-                    <div>
-                      <p className="text-start text-[.6rem] text-black">
-                        GET IT ON
-                      </p>{" "}
-                      <p className="text-black font-bold text-[.6rem]">
-                        Google Play
-                      </p>
-                    </div>
-                  </button>
+                  <img
+                    className="w-28"
+                    src={googlePlay}
+                    loading="lazy"
+                    decoding="async"
+                  />
 
-                  <button className="flex-1 leading-[1] hover:opacity-55 animation-fade flex items-center gap-2 bg-[#E8E8E8] px-2 py-2 rounded-full">
-                    <div>
-                      <FaApple className="text-black text-base" />
-                    </div>
-                    <div>
-                      <p className="text-start text-[.6rem] text-black">
-                        Download on
-                      </p>{" "}
-                      <p className="text-black font-bold text-[.6rem] text-start">
-                        App Store
-                      </p>
-                    </div>
-                  </button>
+                  <img
+                    className="w-28"
+                    src={appStore}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
 
-                <div className="social-links pt-3">
-                  <a href="#" className="twitter">
-                    <div className="flex justify-center">
-                      <FaTwitter />
-                    </div>
-                  </a>
-                  <a href="#" className="facebook">
-                    <div className="flex justify-center">
-                      <FaFacebookF />
-                    </div>
-                  </a>
-                  <a href="#" className="linkedin">
-                    <div className="flex justify-center">
-                      <FaLinkedinIn />
-                    </div>
-                  </a>
-                  <a href="#" className="google-plus">
-                    <div className="flex justify-center">
-                      <FaYoutube />
-                    </div>
-                  </a>
-                  <a href="#" className="instagram">
-                    <div className="flex justify-center">
-                      <FaInstagram />
-                    </div>
-                  </a>
+                <div className="flex justify-center gap-3 items-center">
+                  <Link to="#">
+                    <img src={twitter} className="w-8" loading="lazy" decoding="async" />
+                  </Link>
+                  <Link to="#">
+                    <img src={facebook} className="w-8" loading="lazy" decoding="async" />
+                  </Link>
+                  <Link to="#">
+                    <img src={linkedin} className="w-8" loading="lazy" decoding="async" />
+                  </Link>
+                  <Link to="#">
+                    <img src={youtube} className="w-8" loading="lazy" decoding="async" />
+                  </Link>
+                  <Link to="#">
+                    <img src={instagram} className="w-8" loading="lazy" decoding="async" />
+                  </Link>
                 </div>
               </div>
             </div>
