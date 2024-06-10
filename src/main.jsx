@@ -10,6 +10,7 @@ import "./index.css";
 import HomePage from "./pages/HomePage/HomePage.jsx";
 import Blog from "./pages/Blog/Blog.jsx";
 import Root from "./pages/Root.jsx";
+import Form from "./pages/Form/Form.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
       {
         element: <Blog />,
         path: "/blog",
+      },
+
+      {
+        element: <Form />,
+        path: "/form",
       },
     ],
   },
