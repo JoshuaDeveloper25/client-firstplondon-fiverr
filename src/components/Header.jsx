@@ -5,20 +5,33 @@ import talktalk from "../assets/talktalk.png";
 import React, { useState } from "react";
 import male from "../assets/male.jpg";
 
-import aboutus from "../assets/aboutus.png";
-import getSimHome from "../assets/get-sim-home.svg";
-import guides from "../assets/guides.jpeg";
-import help from "../assets/help.png";
-import login from "../assets/login.png";
-import rocket from "../assets/rocket.jpg";
 import talktalkApp from "../assets/talktalkapp.png";
-import userGuides from "../assets/userguides.webp";
-import simMenu from "../assets/simMenu.png";
 import activateSim from "../assets/activatesim.png";
+import getSimHome from "../assets/get-sim-home.svg";
+import userGuides from "../assets/userguides.webp";
+import aboutus from "../assets/aboutus.png";
+import simMenu from "../assets/simMenu.png";
+import guides from "../assets/guides.jpeg";
+import rocket from "../assets/rocket.jpg";
+import login from "../assets/login.png";
+import help from "../assets/help.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const menuItems = [
+    "Getting Started on Talktalk",
+    "Sim Only Deals",
+    "TalkTalk App",
+    "Step-by-Step Guides",
+    "About TalkTalk",
+    "Help",
+  ];
+
+  // const filteredMenuItems = menuItems.filter((item) =>
+  //   item.toLowerCase().includes(searchQuery.toLowerCase())
+  // );
+  
   return (
     <div className="p-5">
       <header id="navbar" className="bg-white rounded-xl py-5 px-5">

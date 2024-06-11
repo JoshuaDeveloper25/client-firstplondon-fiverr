@@ -1,10 +1,23 @@
 import internationalCall from "../../../assets/international-calls.png";
 import landline from "../../../assets/landline.png";
 import mobile from "../../../assets/mobile.png";
+import { useEffect, useState } from "react";
 import sms from "../../../assets/sms.png";
 import { Link } from "react-router-dom";
 
 const InternationalCalls = () => {
+  const [countries, setCountries] = useState([]);
+  const [calling, setCalling] = useState("");
+0
+  useEffect(() => {
+    const fetchCountryData = async () => {
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      const countries = await response.json();
+      setCountries(countries);
+    };
+
+    fetchCountryData();
+  }, []);
 
   return (
     <section className="container-page md:px-0 px-2 mt-16">
@@ -34,8 +47,19 @@ const InternationalCalls = () => {
             className="px-2 py-2"
             type="text"
             placeholder="Where are you calling?"
+            value={calling}
           />
-          <select className="bg-black text-white"></select>
+          <select
+            className="bg-black text-white py-2 w-24"
+            onChange={(e) => setCalling(e?.target?.value)}
+          >
+            <option value={``}>-- Select --</option>
+            {countries?.map((country, index) => {
+              const { name } = country;
+
+              return <option key={index}>{name?.common}</option>;
+            })}
+          </select>
         </div>
       </div>
 
@@ -52,13 +76,23 @@ const InternationalCalls = () => {
         </div>
 
         <div className="min-w-[10rem]">
-          <img className="w-10 mx-auto" src={mobile} loading="lazy" decoding="async" />
+          <img
+            className="w-10 mx-auto"
+            src={mobile}
+            loading="lazy"
+            decoding="async"
+          />
           <h2 className="font-bold text-2xl my-4">Mobile</h2>
           <h2 className="font-bold text-2xl">8p</h2>
         </div>
 
         <div className="min-w-[10rem]">
-          <img className="w-10 mx-auto" src={sms} loading="lazy" decoding="async" />
+          <img
+            className="w-10 mx-auto"
+            src={sms}
+            loading="lazy"
+            decoding="async"
+          />
           <h2 className="font-bold text-2xl my-4">Text</h2>
           <h2 className="font-bold text-2xl">6p</h2>
         </div>

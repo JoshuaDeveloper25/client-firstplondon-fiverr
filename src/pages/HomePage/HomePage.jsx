@@ -5,8 +5,8 @@ import CarouselComplex from "./components/CarouselComplex";
 import FAQ from "./components/FAQ";
 import InternationalCalls from "./components/InternationalCalls";
 import GettingStarted from "./components/GettingStarted";
-import App from "./components/App";
 import Reviews from "./components/Reviews";
+import App from "./components/App";
 
 const HomePage = () => {
   return (
