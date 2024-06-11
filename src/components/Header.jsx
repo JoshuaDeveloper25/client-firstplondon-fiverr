@@ -5,6 +5,17 @@ import talktalk from "../assets/talktalk.png";
 import React, { useState } from "react";
 import male from "../assets/male.jpg";
 
+import aboutus from "../assets/aboutus.png";
+import getSimHome from "../assets/get-sim-home.svg";
+import guides from "../assets/guides.jpeg";
+import help from "../assets/help.png";
+import login from "../assets/login.png";
+import rocket from "../assets/rocket.jpg";
+import talktalkApp from "../assets/talktalkapp.png";
+import userGuides from "../assets/userguides.webp";
+import simMenu from "../assets/simMenu.png";
+import activateSim from "../assets/activatesim.png";
+
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,28 +45,40 @@ const Header = () => {
                 className={`bg-white z-50 transition-transform
               ${isOpen ? "translate-x-0" : "translate-x-full"}
               min-h-svh top-0 right-0 p-5 nav-menu absolute
-             lg:translate-x-0 lg:p-0 lg:min-h-full lg:static flex flex-col lg:flex-row`}
+             lg:translate-x-0 lg:p-0 lg:min-h-full lg:static lg:overflow-y-visible overflow-y-auto lg:overflow-x-visible overflow-x-hidden flex lg:items-center items-start flex-col lg:flex-row`}
               >
-                <li className="text-end lg:hidden pt-5">
+                <li className="text-end w-full lg:hidden pt-5 pe-3 pb-2">
                   <button
-                    className=" text-3xl"
+                    className="text-red-500 text-3xl"
                     onClick={() => setIsOpen(false)}
                   >
                     <IoCloseOutline />
                   </button>
                 </li>
 
-                <li className="menu-active">
-                  <a href="#">Getting Started on TalkTalk</a>
+                <li className="lg:hidden">
+                  <input
+                    placeholder="Search"
+                    type="search"
+                    className="bootstrap-input"
+                  />
                 </li>
 
-                <li className="menu-has-children">
+                <li className="menu-active lg:pt-0 pt-4">
+                  <img src={rocket} className="lg:hidden w-8 inline" />{" "}
                   <a href="#">
-                    Sim Only Deals
-                    <IoIosArrowDown className="inline" />
+                    {" "}
+                    <span className="ps-1">Getting Started on TalkTalk</span>
                   </a>
+                </li>
 
-                  <ul>
+                <li className="menu-has-children ">
+                  <img src={simMenu} className="lg:hidden w-8 inline" />
+                  <a href="#">
+                    <span className="ps-2">Sim Only Deals</span>
+                    <IoIosArrowDown className="self-end w-full inline" />
+                  </a>
+                  <ul className="top-20">
                     <li>
                       <a href="#">Best SIM Only Deals</a>
                     </li>
@@ -79,16 +102,25 @@ const Header = () => {
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <a href="#">TalkTalk App</a>
+
+                <li className="">
+                  {" "}
+                  <img
+                    src={talktalkApp}
+                    className="lg:hidden w-8 inline"
+                  />{" "}
+                  <a href="#">
+                    <span className="ps-1">TalkTalk App</span>
+                  </a>
                 </li>
 
-                <li className="menu-has-children">
+                <li className="menu-has-children ">
+                  <img src={guides} className="lg:hidden w-8 inline" />{" "}
                   <a href="#">
-                    Step-by-Step Guides
-                    <IoIosArrowDown className="inline" />
+                    <span className="lg:ps-0 ps-1">Step-by-Step Guides</span>
+                    <IoIosArrowDown className="inline lg:ps-4 ps-4 size-8" />
                   </a>
-                  <ul>
+                  <ul className="">
                     <li>
                       <a href="#">Switching to us</a>
                     </li>
@@ -107,6 +139,9 @@ const Header = () => {
                     <li>
                       <a href="#">How to Top-up</a>
                     </li>
+                    <li className="lg:hidden">
+                      <img className="rounded" src={userGuides} />
+                    </li>
                     <li className="menu-img">
                       <img src={male} />
                     </li>
@@ -114,9 +149,10 @@ const Header = () => {
                 </li>
 
                 <li className="menu-has-children">
+                  <img src={aboutus} className="lg:hidden w-7 inline" />{" "}
                   <a href="#">
-                    About TalkTalk
-                    <IoIosArrowDown className="inline" />
+                    <span className="ps-2">About TalkTalk</span>
+                    <IoIosArrowDown className="w-full inline ps-1" />
                   </a>
                   <ul>
                     <li>
@@ -144,31 +180,45 @@ const Header = () => {
                 </li>
 
                 <li className="menu-has-children">
-                  <a href="#">
+                  <img src={help} className="lg:hidden w-9 inline" />{" "}
+                  <a href="#" className="w-full">
                     Help
-                    <IoIosArrowDown className="inline" />
+                    <IoIosArrowDown className="text-end inline w-full lg:ps-0 ps-[5.6rem]" />
                   </a>
                   <ul>
                     <li>
-                      <a href="#">FAQs</a>
+                      <a href="#">
+                        <img
+                          src={getSimHome}
+                          className="inline w-10"
+                          loading="lazy"
+                          decoding="async"
+                        />{" "}
+                        Order your free SIM
+                      </a>
                     </li>
                     <li>
-                      <a href="#">Service Updates</a>
+                      <a href="#">
+                        <img
+                          src={activateSim}
+                          className="inline w-10"
+                          loading="lazy"
+                          decoding="async"
+                        />{" "}
+                        Activate your SIM
+                      </a>
                     </li>
+                    <div className="h-[.1rem] w-full bg-gray-600 mx-5"></div>
                     <li>
-                      <a href="#">Ask The Community</a>
-                    </li>
-                    <li>
-                      <a href="#">Ask a giffgaff Agent</a>
-                    </li>
-                    <li>
-                      <a href="#">Contact us</a>
-                    </li>
-                    <li>
-                      <a href="#">Privacy Policy</a>
-                    </li>
-                    <li className="menu-img">
-                      <img src={male} />
+                      <a href="#" className="block text-center w-full">
+                        <img
+                          src={login}
+                          className="inline w-8 mx-auto"
+                          loading="lazy"
+                          decoding="async"
+                        />{" "}
+                        <span className="ps-2 ">Log In</span>
+                      </a>
                     </li>
                   </ul>
                 </li>
