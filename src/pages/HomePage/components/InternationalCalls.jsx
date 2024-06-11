@@ -5,6 +5,7 @@ import sms from "../../../assets/sms.png";
 import { Link } from "react-router-dom";
 
 const InternationalCalls = () => {
+
   return (
     <section className="container-page md:px-0 px-2 mt-16">
       <div className="text-center">
