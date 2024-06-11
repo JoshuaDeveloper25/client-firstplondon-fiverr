@@ -85,13 +85,13 @@ const Header = () => {
                   </a>
                 </li>
 
-                <li className="menu-has-children ">
+                <li className="menu-has-children">
                   <img src={simMenu} className="lg:hidden w-8 inline" />
                   <a href="#">
                     <span className="ps-2">Sim Only Deals</span>
-                    <IoIosArrowDown className="self-end w-full inline" />
+                    <IoIosArrowDown className="lg:self-start self-end lg:w-auto w-full inline" />
                   </a>
-                  <ul className="top-20">
+                  <ul className="lg:left-auto left-1 bg-white simOnlyDeals">
                     <li>
                       <a href="#">Best SIM Only Deals</a>
                     </li>
@@ -109,6 +109,9 @@ const Header = () => {
                     </li>
                     <li>
                       <a href="#">Activate Your SIM</a>
+                    </li>
+                    <li className="lg:hidden block">
+                      <img src={male} className="rounded w-full" />
                     </li>
                     <li className="menu-img">
                       <img src={male} />
@@ -165,15 +168,16 @@ const Header = () => {
                   <img src={aboutus} className="lg:hidden w-7 inline" />{" "}
                   <a href="#">
                     <span className="ps-2">About TalkTalk</span>
-                    <IoIosArrowDown className="w-full inline ps-1" />
+                    <IoIosArrowDown className="lg:w-auto w-full inline ps-2" />
                   </a>
-                  <ul>
+                  <ul className="lg:left-auto left-1 bg-white aboutTalk">
                     <li>
                       <a href="#">Why TalkTalk</a>
                     </li>
                     <li>
                       <a href="#">Community</a>
                     </li>
+                    
                     <li>
                       <a href="#">Roaming</a>
                     </li>
@@ -186,19 +190,22 @@ const Header = () => {
                     <li>
                       <a href="#">e-SIM</a>
                     </li>
+                    <li className="lg:hidden block">
+                      <img src={male} className="rounded w-full" />
+                    </li>
                     <li className="menu-img">
                       <img src={male} />
                     </li>
                   </ul>
                 </li>
 
-                <li className="menu-has-children">
+                <li className="menu-has-children lg:hidden">
                   <img src={help} className="lg:hidden w-9 inline" />{" "}
                   <a href="#" className="w-full">
                     Help
                     <IoIosArrowDown className="text-end inline w-full lg:ps-0 ps-[5.6rem]" />
                   </a>
-                  <ul>
+                  <ul className="lg:left-auto left-1 bg-white help">
                     <li>
                       <a href="#">
                         <img

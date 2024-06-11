@@ -37,6 +37,7 @@ const Reviews = () => {
 
           <div className="relative">
             <img
+            className="rounded-b-sm"
               decoding="async"
               loading="lazy"
               src={greenBg}

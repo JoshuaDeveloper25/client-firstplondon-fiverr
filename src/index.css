@@ -408,7 +408,7 @@ body {
   border-radius: 30px;
 }
 
-.nav-menu > li {  
+.nav-menu > li {
   float: left;
 }
 
@@ -651,4 +651,12 @@ html:has(#active-side) {
   opacity: 1;
   transform: translateX(0);
   transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Ajusta la duración de la transición a 2 segundos */
+}
+
+@media (max-width: 1024px) {
+  .nav-menu .simOnlyDeals,
+  .nav-menu .aboutTalk,
+  .nav-menu .help {
+    width: 15rem;
+  }
 }

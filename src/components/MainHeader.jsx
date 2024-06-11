@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const MainHeader = () => {
   return (
     <section id="mainHeader" className="container-page px-2 pt-3">
-      <div className="flex flex-col md:flex-row justify-evenly md:gap-8 gap-2 items-center">
-        <div className="flex-[80%] flex sm:text-start text-center flex-col sm:flex-row justify-center items-center text-gray-700 gap-2">
+      <div className="flex justify-evenly md:gap-8 gap-2 items-center">
+        <div className="flex-[80%] flex sm:text-start text-center  justify-center items-center text-gray-700 gap-2">
           <img
             className="w-24"
             src={fiveStarsYellow}
