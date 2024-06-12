@@ -11,7 +11,7 @@ const AccordionAlt = ({
   id,
 }) => {
   return (
-    <div className={`mb-3 ${isOpen === id ? "bg-green-200/35" : null}`}>
+    <div className={`mb-3 ${isOpen === id ? "bg-[#D9FFEC]" : null}`}>
       <button
         onClick={() => handleToggle(id)}
         className={`flex justify-between items-center gap-2 w-full rounded px-2 py-2 ${
