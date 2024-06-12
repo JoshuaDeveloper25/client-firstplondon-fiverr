@@ -114,7 +114,7 @@ const InternationalCalls = () => {
         </div>
       </div>
 
-      {countrySelected ? (
+      {countrySelected && countrySelected?.landline ? (
         <div className="flex flex-wrap text-center sm:items-start items-center justify-evenly gap-8 mt-10">
           <div className="min-w-[10rem]">
             <img
