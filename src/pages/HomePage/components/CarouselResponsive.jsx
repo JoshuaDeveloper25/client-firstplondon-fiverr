@@ -131,7 +131,7 @@ const Card = ({ color, isActive, setColor }) => {
 
           <button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="py-2 mt-5 bg-white text-black w-full flex justify-center items-center gap-2"
+            className="md:py-2 py-5 mt-5 bg-white text-black w-full flex justify-center items-center gap-2"
           >
             View plan details
             <FaChevronDown

@@ -4,16 +4,22 @@ import mobile from "../../../assets/mobile.png";
 import { useEffect, useState } from "react";
 import sms from "../../../assets/sms.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const InternationalCalls = () => {
   const [countries, setCountries] = useState([]);
   const [calling, setCalling] = useState("");
-0
+  console.log(countries)
+
   useEffect(() => {
     const fetchCountryData = async () => {
-      const response = await fetch("https://restcountries.com/v3.1/all");
-      const countries = await response.json();
-      setCountries(countries);
+      try {
+        const response = await axios.get("https://restcountries.com/v3.1/all");
+        const countries = await response.json();
+        setCountries(countries);
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     fetchCountryData();

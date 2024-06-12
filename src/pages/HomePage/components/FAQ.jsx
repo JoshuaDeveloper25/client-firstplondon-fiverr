@@ -1,8 +1,90 @@
 import AccordionAlt from "../../../components/AccordionAlt";
 import faq from "../../../assets/faq.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
+const faq5 = [
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 1,
+  },
+
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 2,
+  },
+
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 3,
+  },
+
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 4,
+  },
+
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 5,
+  },
+];
+
+const faq10 = [
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 6,
+  },
+
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 7,
+  },
+
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 8,
+  },
+
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 9,
+  },
+
+  {
+    title: "What is included in TalkTalk plans?",
+    paragraph: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque cupiditate amet commodi ipsa nam, praesentium`,
+    id: 10,
+  },
+];
 
 const FAQ = () => {
+  const [isOpen, setIsOpen] = useState(0);
+
+  const handleToggle = (key) => {
+    if (key === isOpen) return setIsOpen(0);
+    setIsOpen(key);
+  };
+
   return (
     <section className="container-page md:px-0 px-2">
       <div className="text-center">
@@ -26,19 +108,29 @@ const FAQ = () => {
 
       <div className="flex flex-col sm:flex-row sm:gap-6 mt-8">
         <div className="flex-1">
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
+          {faq5?.map((item) => (
+            <AccordionAlt
+              key={item}
+              title={item?.title}
+              content={item?.paragraph}
+              handleToggle={handleToggle}
+              id={item?.id}
+              isOpen={isOpen}
+            />
+          ))}
         </div>
 
         <div className="flex-1">
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
-          <AccordionAlt title={"What is included in TalkTalk plans?"} />
+          {faq10?.map((item) => (
+            <AccordionAlt
+              key={item}
+              title={item?.title}
+              content={item?.paragraph}
+              handleToggle={handleToggle}
+              id={item?.id}
+              isOpen={isOpen}
+            />
+          ))}
         </div>
       </div>
     </section>

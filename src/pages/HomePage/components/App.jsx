@@ -136,12 +136,31 @@ const App = () => {
           </h3>
           <div className="flex justify-center gap-5 items-center mt-5">
             <div>
-              <img className="w-28" decoding="async" loading="lazy" src={qrCode} />
+              <img
+                className="w-28"
+                decoding="async"
+                loading="lazy"
+                src={qrCode}
+              />
             </div>
             <div className="flex flex-col gap-2">
-              <img className="w-28" src={googlePlay} loading="lazy" decoding="async" />
+              <Link to={"https://play.google.com/store/games"}>
+                <img
+                  className="w-28"
+                  src={googlePlay}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </Link>
 
-              <img className="w-28" src={appStore} loading="lazy" decoding="async" />
+              <Link to={"https://www.apple.com/la/app-store/"}>
+                <img
+                  className="w-28"
+                  src={appStore}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </Link>
             </div>
           </div>
         </article>

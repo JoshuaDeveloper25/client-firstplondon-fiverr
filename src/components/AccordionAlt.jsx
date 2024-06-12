@@ -1,33 +1,38 @@
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { useState } from "react";
 
-const AccordionAlt = ({ title = "titulo", info, colorArrow }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const AccordionAlt = ({
+  isOpen,
+  handleToggle,
+  title,
+  content,
+  info,
+  colorArrow,
+  id,
+}) => {
   return (
-    <div className="mb-3">
+    <div className={`mb-3 ${isOpen === id ? "bg-green-200/35" : null}`}>
       <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="flex justify-between items-center gap-2 w-full border border-cyan-500 rounded px-2 py-2"
+        onClick={() => handleToggle(id)}
+        className={`flex justify-between items-center gap-2 w-full rounded px-2 py-2 ${
+          isOpen === id ? null : "border border-cyan-500"
+        }`}
       >
         {" "}
         {title}
         <span style={{ color: colorArrow }}>
-          {isOpen ? <FaMinus /> : <FaPlus />}
+          {isOpen === id ? <FaMinus /> : <FaPlus />}
         </span>{" "}
       </button>
 
       <div
-        className="grid transition-all bg-green-200/35"
-        style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+        className="grid transition-all shadow-lg"
+        style={{ gridTemplateRows: isOpen === id ? "1fr" : "0fr" }}
       >
         <div className="overflow-hidden">
           <div>
             <div className="px-5 py-3">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Doloremque cupiditate amet commodi ipsa nam, praesentium
-              </p>
+              <p className="font-thin">{content}</p>
             </div>
           </div>
         </div>

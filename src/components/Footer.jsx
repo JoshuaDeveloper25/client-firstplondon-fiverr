@@ -18,148 +18,177 @@ const Footer = () => {
           <div className="container-page mx-auto px-4">
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:place-content-start place-content-center">
               <div className="footer-links">
-                <h4>About Talktalk</h4>
+                <h4 className="font-extrabold">About Talktalk</h4>
 
                 <ul>
                   <li className="flex items-center ">
-                    <Link href="#">- Getting started on Talktalk</Link>
+                    <Link to="#" className="text-sm font-extralight">- Getting started on Talktalk</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Why Talktalk</Link>
+                    <Link to="#" className="text-sm font-extralight">- Why Talktalk</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Community</Link>
+                    <Link to="#" className="text-sm font-extralight">- Community</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Roaming</Link>
+                    <Link to="#" className="text-sm font-extralight">- Roaming</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- International Calls</Link>
+                    <Link to="#" className="text-sm font-extralight">- International Calls</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- UK rates</Link>
+                    <Link to="#" className="text-sm font-extralight">- UK rates</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Talktap App</Link>
+                    <Link to="#" className="text-sm font-extralight">- Talktap App</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- eSIM</Link>
+                    <Link to="#" className="text-sm font-extralight">- eSIM</Link>
                   </li>
                 </ul>
               </div>
 
               <div className="footer-links">
-                <h4>SIM only deals</h4>
+                <h4 className="font-extrabold">SIM only deals</h4>
                 <ul>
                   <li className="flex items-center ">
-                    <Link href="#">- Best SIM only deals</Link>
+                    <Link to="#" className="text-sm font-extralight">- Best SIM only deals</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Pay as you go deals</Link>
+                    <Link to="#" className="text-sm font-extralight">- Pay as you go deals</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Monthly rolling SIM deals</Link>
+                    <Link to="#" className="text-sm font-extralight">- Monthly rolling SIM deals</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Contract SIM deals</Link>
+                    <Link to="#" className="text-sm font-extralight">- Contract SIM deals</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Order your free SIM</Link>
+                    <Link to="#" className="text-sm font-extralight">- Order your free SIM</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Activate your SIM</Link>
+                    <Link to="#" className="text-sm font-extralight">- Activate your SIM</Link>
                   </li>
                 </ul>
               </div>
 
               <div className="footer-links">
-                <h4>Step-by-step guides</h4>
+                <h4 className="font-extrabold">Step-by-step guides</h4>
                 <ul>
                   <li className="flex items-center ">
-                    <Link href="#">- Switching to us</Link>
+                    <Link to="#" className="text-sm font-extralight">- Switching to us</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Activate your Talktalk SIM</Link>
+                    <Link to="#" className="text-sm font-extralight">- Activate your Talktalk SIM</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- PIN Code</Link>
+                    <Link to="#" className="text-sm font-extralight">- PIN Code</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Voicemail</Link>
+                    <Link to="#" className="text-sm font-extralight">- Voicemail</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- PUK code</Link>
+                    <Link to="#" className="text-sm font-extralight">- PUK code</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- How to top-up</Link>
+                    <Link to="#" className="text-sm font-extralight">- How to top-up</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- APN Internet Settings</Link>
+                    <Link to="#" className="text-sm font-extralight">- APN Internet Settings</Link>
                   </li>
                 </ul>
               </div>
 
               <div className="footer-links">
-                <h4>Help</h4>
+                <h4 className="font-extrabold">Help</h4>
                 <ul>
                   <li className="flex items-center ">
-                    <Link href="#">- Service updates</Link>
+                    <Link to="#" className="text-sm font-extralight">- Service updates</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- FAQs</Link>
+                    <Link to="#" className="text-sm font-extralight">- FAQs</Link>
                   </li>
                 </ul>
               </div>
 
               <div className="footer-links">
-                <h4>Contact Us</h4>
+                <h4 className="font-extrabold">Contact Us</h4>
 
                 <ul>
                   <li className="flex items-center ">
-                    <Link href="#">- Ask the community</Link>
+                    <Link to="#" className="text-sm font-extralight">- Ask the community</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Ask a Talktalk agent</Link>
+                    <Link to="#" className="text-sm font-extralight">- Ask a Talktalk agent</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- Contact us</Link>
+                    <Link to="#" className="text-sm font-extralight">- Contact us</Link>
                   </li>
                   <li className="flex items-center ">
-                    <Link href="#">- email: support@talktalk-sim.com</Link>
+                    <Link to="#" className="text-sm font-extralight">- email: support@talktalk-sim.com</Link>
                   </li>
                 </ul>
 
                 <div className="flex gap-3 my-3">
-                  <img
-                    className="w-28"
-                    src={googlePlay}
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <Link to={"https://play.google.com/store/games"}>
+                    <img
+                      className="w-28"
+                      src={googlePlay}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </Link>
 
-                  <img
-                    className="w-28"
-                    src={appStore}
-                    loading="lazy"
-                    decoding="async"
-                  />
+                  <Link to={"https://www.apple.com/la/app-store/"}>
+                    <img
+                      className="w-28"
+                      src={appStore}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </Link>
                 </div>
 
                 <div className="flex justify-center gap-3 items-center">
-                  <Link to="#">
-                    <img src={twitter} className="w-8" loading="lazy" decoding="async" />
+                  <Link to="#" className="text-sm font-extralight">
+                    <img
+                      src={twitter}
+                      className="w-8"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </Link>
-                  <Link to="#">
-                    <img src={facebook} className="w-8" loading="lazy" decoding="async" />
+                  <Link to="#" className="text-sm font-extralight">
+                    <img
+                      src={facebook}
+                      className="w-8"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </Link>
-                  <Link to="#">
-                    <img src={linkedin} className="w-8" loading="lazy" decoding="async" />
+                  <Link to="#" className="text-sm font-extralight">
+                    <img
+                      src={linkedin}
+                      className="w-8"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </Link>
-                  <Link to="#">
-                    <img src={youtube} className="w-8" loading="lazy" decoding="async" />
+                  <Link to="#" className="text-sm font-extralight">
+                    <img
+                      src={youtube}
+                      className="w-8"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </Link>
-                  <Link to="#">
-                    <img src={instagram} className="w-8" loading="lazy" decoding="async" />
+                  <Link to="#" className="text-sm font-extralight">
+                    <img
+                      src={instagram}
+                      className="w-8"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </Link>
                 </div>
               </div>

@@ -6,7 +6,7 @@ const IncludedFeatures = ({ children, className, errorImage }) => {
     <div className={`flex gap-2 items-start ${className}`}>
       <div className="flex-1">
         <img
-          className="w-8"
+          className="w-6"
           src={errorImage ? circleCheck2 : circleCheck}
           loading="lazy"
           decoding="async"
