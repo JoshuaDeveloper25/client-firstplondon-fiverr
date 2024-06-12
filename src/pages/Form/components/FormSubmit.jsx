@@ -1,10 +1,11 @@
 import IncludedFeatures from "../../../components/IncludedFeatures";
 import { InputForm } from "../../../components/InputForm";
 import blueCard from "../../../assets/blue-card-alt.png";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "react-router-dom";
 import { FiSend } from "react-icons/fi";
 
-const FormSubmit = ({ form, handleSubmit }) => {
+const FormSubmit = ({ form, handleSubmit, capVal, setCapVal }) => {
   return (
     <section className="bg-white py-10 px-2 mt-14">
       <div className="container-page">
@@ -72,6 +73,7 @@ const FormSubmit = ({ form, handleSubmit }) => {
                 inputLabelHolder={"Address line 2 (optional)"}
                 inputName={"addressLine2"}
                 inputType={"text"}
+                required={false}
               />
 
               <InputForm
@@ -110,9 +112,14 @@ const FormSubmit = ({ form, handleSubmit }) => {
               </p>
 
               <div className="text-center mt-3">
+                <ReCAPTCHA
+                  sitekey={import.meta.env.VITE_RECAPCHA_KEY_BASE_URL}
+                  onChange={(e) => setCapVal(e)}
+                />
                 <button
+                  disabled={!capVal}
                   type="submit"
-                  className="rounded-full px-3 py-3 text-white font-bold background-gradient"
+                  className="rounded-full px-3 py-3 text-white font-bold background-gradient mt-3"
                 >
                   Order your Free Talktalk SIM{" "}
                   <FiSend className="inline size-6 ms-1" />

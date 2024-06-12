@@ -6,6 +6,7 @@ export const InputForm = ({
   inputName,
   onChange,
   valueEvent,
+  required = true,
 }) => {
   return (
     <label className={`block ${labelClassNameAdd || "mb-3"}`}>
@@ -17,6 +18,7 @@ export const InputForm = ({
         onChange={onChange}
         value={valueEvent}
         placeholder={inputPlaceholder}
+        required={required}
       />
     </label>
   );

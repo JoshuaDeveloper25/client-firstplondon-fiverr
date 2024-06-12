@@ -1,12 +1,15 @@
 // --> Components from page
 import Introduction from "./components/Introduction";
 import FormSubmit from "./components/FormSubmit";
+import { useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { useNavigate } from "react-router-dom";
+
+// 6Lflh_cpAAAAALLYu7xB93rzfBLSH0SHryqgUMXW
 
 const Form = () => {
   const [loading, setIsLoading] = useState(false);
+  const [capVal, setCapVal] = useState(null);
   const navigate = useNavigate();
   const form = useRef();
 
@@ -31,7 +34,12 @@ const Form = () => {
     <>
       <Introduction />
 
-      <FormSubmit form={form} handleSubmit={handleSubmit} />
+      <FormSubmit
+        capVal={capVal}
+        setCapVal={setCapVal}
+        form={form}
+        handleSubmit={handleSubmit}
+      />
     </>
   );
 };

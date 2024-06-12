@@ -98,7 +98,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="container-page bg-white px-4 py-4 rounded-md mt-5">
+    <nav className="container-page bg-white px-4 py-4 rounded-md mt-5 mb-8">
       <div className="flex items-center justify-between">
         <img src={talktalk} className="h-10 block" />
         <RxHamburgerMenu
