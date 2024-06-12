@@ -6,16 +6,48 @@ import sms from "../../../assets/sms.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+const infoCountry = {
+  "+504": {
+    landline: "30 p",
+    mobile: "30 p",
+    text: "8 p",
+  },
+
+  "+93": {
+    landline: "30 p",
+    mobile: "30 p",
+    text: "8 p",
+  },
+
+  "+1": {
+    landline: "14 p",
+    mobile: "14 p",
+    text: "8 p",
+  },
+
+  "+355": {
+    landline: "60 p",
+    mobile: "60 p",
+    text: "8 p",
+  },
+
+  "+213": {
+    landline: "£ 1,5",
+    mobile: "£ 1,5",
+    text: "8 p",
+  },
+};
+
 const InternationalCalls = () => {
+  const [countrySelected, setCountrySelected] = useState({});
   const [countries, setCountries] = useState([]);
   const [calling, setCalling] = useState("");
-  console.log(countries)
 
   useEffect(() => {
     const fetchCountryData = async () => {
       try {
         const response = await axios.get("https://restcountries.com/v3.1/all");
-        const countries = await response.json();
+        const countries = await response.data;
         setCountries(countries);
       } catch (error) {
         console.log(error);
@@ -24,6 +56,13 @@ const InternationalCalls = () => {
 
     fetchCountryData();
   }, []);
+
+  const handleChange = (e) => {
+    setCalling(e?.target?.value);
+    infoCountry[e?.target?.value];
+    console.log(infoCountry[e?.target?.value]);
+    setCountrySelected(infoCountry[e?.target?.value]);
+  };
 
   return (
     <section className="container-page md:px-0 px-2 mt-16">
@@ -53,56 +92,64 @@ const InternationalCalls = () => {
             className="px-2 py-2"
             type="text"
             placeholder="Where are you calling?"
-            value={calling}
+            defaultValue={calling}
+            disabled
           />
           <select
             className="bg-black text-white py-2 w-24"
-            onChange={(e) => setCalling(e?.target?.value)}
+            onChange={handleChange}
           >
-            <option value={``}>-- Select --</option>
+            <option defaultValue={``}>-- Select --</option>
             {countries?.map((country, index) => {
               const { name } = country;
+              const union = country?.idd?.root + country?.idd?.suffixes?.[0];
 
-              return <option key={index}>{name?.common}</option>;
+              return (
+                <option value={union} key={index}>
+                  {name?.common}
+                </option>
+              );
             })}
           </select>
         </div>
       </div>
 
-      <div className="flex flex-wrap text-center sm:items-start items-center justify-evenly gap-8 mt-10">
-        <div className="min-w-[10rem]">
-          <img
-            className="w-10 mx-auto"
-            src={landline}
-            loading="lazy"
-            decoding="async"
-          />
-          <h2 className="font-bold text-2xl my-4">Landline</h2>
-          <h2 className="font-bold text-2xl">6p</h2>
-        </div>
+      {countrySelected ? (
+        <div className="flex flex-wrap text-center sm:items-start items-center justify-evenly gap-8 mt-10">
+          <div className="min-w-[10rem]">
+            <img
+              className="w-10 mx-auto"
+              src={landline}
+              loading="lazy"
+              decoding="async"
+            />
+            <h2 className="font-bold text-2xl my-4">Landline</h2>
+            <h2 className="font-bold text-2xl">{countrySelected?.landline}</h2>
+          </div>
 
-        <div className="min-w-[10rem]">
-          <img
-            className="w-10 mx-auto"
-            src={mobile}
-            loading="lazy"
-            decoding="async"
-          />
-          <h2 className="font-bold text-2xl my-4">Mobile</h2>
-          <h2 className="font-bold text-2xl">8p</h2>
-        </div>
+          <div className="min-w-[10rem]">
+            <img
+              className="w-10 mx-auto"
+              src={mobile}
+              loading="lazy"
+              decoding="async"
+            />
+            <h2 className="font-bold text-2xl my-4">Mobile</h2>
+            <h2 className="font-bold text-2xl">{countrySelected?.mobile}</h2>
+          </div>
 
-        <div className="min-w-[10rem]">
-          <img
-            className="w-10 mx-auto"
-            src={sms}
-            loading="lazy"
-            decoding="async"
-          />
-          <h2 className="font-bold text-2xl my-4">Text</h2>
-          <h2 className="font-bold text-2xl">6p</h2>
+          <div className="min-w-[10rem]">
+            <img
+              className="w-10 mx-auto"
+              src={sms}
+              loading="lazy"
+              decoding="async"
+            />
+            <h2 className="font-bold text-2xl my-4">Text</h2>
+            <h2 className="font-bold text-2xl">{countrySelected?.text}</h2>
+          </div>
         </div>
-      </div>
+      ) : null}
     </section>
   );
 };

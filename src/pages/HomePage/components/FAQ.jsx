@@ -108,9 +108,9 @@ const FAQ = () => {
 
       <div className="flex flex-col sm:flex-row sm:gap-6 mt-8">
         <div className="flex-1">
-          {faq5?.map((item) => (
+          {faq5?.map((item, idx) => (
             <AccordionAlt
-              key={item}
+              key={idx}
               title={item?.title}
               content={item?.paragraph}
               handleToggle={handleToggle}
@@ -121,9 +121,9 @@ const FAQ = () => {
         </div>
 
         <div className="flex-1">
-          {faq10?.map((item) => (
+          {faq10?.map((item, idx) => (
             <AccordionAlt
-              key={item}
+              key={idx}
               title={item?.title}
               content={item?.paragraph}
               handleToggle={handleToggle}

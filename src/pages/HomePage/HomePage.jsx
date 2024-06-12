@@ -15,7 +15,7 @@ const HomePage = () => {
       <Header />
 
       {/* -- Cookies -- */}
-      <Cookies />
+      {/* <Cookies /> */}
 
       {/* -- Carousel -- */}
       <CarouselComplex />

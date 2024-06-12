@@ -158,7 +158,7 @@ const Header = () => {
                       <li>
                         <a href="#">Switching to us</a>
                       </li>
-                      <li>
+                      <li><div>FooterMenu</div>
                         <a href="#">Activate Your SIM</a>
                       </li>
                       <li>
