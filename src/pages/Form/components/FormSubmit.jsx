@@ -4,7 +4,7 @@ import blueCard from "../../../assets/blue-card-alt.png";
 import { Link } from "react-router-dom";
 import { FiSend } from "react-icons/fi";
 
-const FormSubmit = () => {
+const FormSubmit = ({ form, handleSubmit }) => {
   return (
     <section className="bg-white py-10 px-2 mt-14">
       <div className="container-page">
@@ -31,12 +31,12 @@ const FormSubmit = () => {
               </div>
             </div>
 
-            <form className="mt-4">
+            <form ref={form} onSubmit={handleSubmit} className="mt-4">
               <div className="flex flex-col md:flex-row gap-3">
                 <div className="flex-1">
                   <InputForm
                     inputLabelHolder={"First name"}
-                    inputName={"firstName"}
+                    inputName={"user_name"}
                     inputType={"text"}
                   />
                 </div>
@@ -44,7 +44,7 @@ const FormSubmit = () => {
                 <div className="flex-1">
                   <InputForm
                     inputLabelHolder={"Last name"}
-                    inputName={"lastName"}
+                    inputName={"sur_name"}
                     inputType={"text"}
                   />
                 </div>
@@ -52,7 +52,7 @@ const FormSubmit = () => {
 
               <InputForm
                 inputLabelHolder={"Email"}
-                inputName={"email"}
+                inputName={"email_id"}
                 inputType={"email"}
               />
 
@@ -64,13 +64,13 @@ const FormSubmit = () => {
 
               <InputForm
                 inputLabelHolder={"Address line 1"}
-                inputName={"adressLine1"}
+                inputName={"addressLine1"}
                 inputType={"text"}
               />
 
               <InputForm
                 inputLabelHolder={"Address line 2 (optional)"}
-                inputName={"adressLine2"}
+                inputName={"addressLine2"}
                 inputType={"text"}
               />
 
@@ -110,7 +110,10 @@ const FormSubmit = () => {
               </p>
 
               <div className="text-center mt-3">
-                <button className="rounded-full px-3 py-3 text-white font-bold background-gradient">
+                <button
+                  type="submit"
+                  className="rounded-full px-3 py-3 text-white font-bold background-gradient"
+                >
                   Order your Free Talktalk SIM{" "}
                   <FiSend className="inline size-6 ms-1" />
                 </button>
