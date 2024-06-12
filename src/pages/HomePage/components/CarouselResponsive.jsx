@@ -60,15 +60,15 @@ const CarouselResponsive = () => {
           //     slidesPerView: 3,
           //   },
           // }}
-          // pagination={{
-          //   clickable: true,
-          // }}
+          pagination={{
+            clickable: true,
+          }}
           // slidesPerView={2}
           slidesPerView={3}
           spaceBetween={15}
           centeredSlides
-          className="pb-10"
-          pagination
+          className="pb-10 swiperModificado"
+          controller
         >
           {data.map((item, idx) => (
             <SwiperSlide key={idx}>

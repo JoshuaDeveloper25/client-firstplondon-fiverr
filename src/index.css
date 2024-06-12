@@ -84,6 +84,14 @@ html {
   width: 556px;
 }
 
+.swiperModificado {
+  overflow: unset!important;
+}
+
+.swiperModificado .swiper-pagination {
+  top: 100%!important;
+}
+
 .desktop .swiper-wrapper {
   align-items: center;
 }
@@ -417,7 +425,7 @@ body {
 }
 
 .blockImportant {
-  display: block!important;
+  display: block !important;
 }
 
 /* .nav-menu li:hover > ul,
