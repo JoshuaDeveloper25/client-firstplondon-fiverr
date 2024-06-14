@@ -159,12 +159,12 @@ const InternationalCalls = () => {
           </button>
 
           {isOpen && (
-            <ul className="absolute top-full w-full bg-red-500 mt-5">
+            <ul className="absolute top-full w-full bg-white mt-5 max-h-64 overflow-auto">
               {countryResult?.map((country, index) => {
                 return (
                   <li key={index}>
                     <button
-                      className="p-2 hover:bg-white w-full text-start"
+                      className="p-2 hover:bg-blue-600 hover:text-white w-full text-start"
                       onClick={() => handleChange(country.value, country.label)}
                     >
                       {country?.label} ({country.value})
