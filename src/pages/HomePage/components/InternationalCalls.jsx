@@ -1,86 +1,123 @@
-import internationalCall from "../../../assets/international-calls.png";
-import landline from "../../../assets/landline.png";
-import mobile from "../../../assets/mobile.png";
-import { useEffect, useState } from "react";
-import sms from "../../../assets/sms.png";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import internationalCall from '../../../assets/international-calls.png';
+import landline from '../../../assets/landline.png';
+import mobile from '../../../assets/mobile.png';
+import { useEffect, useRef, useState } from 'react';
+import sms from '../../../assets/sms.png';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { IoMdArrowDropdown } from 'react-icons/io';
 
 const infoCountry = {
-  "+7840": {
-    landline: "30 p",
-    mobile: "30 p",
-    text: "8 p",
+  '+7840': {
+    landline: '30 p',
+    mobile: '30 p',
+    text: '8 p',
   },
 
-  "+93": {
-    landline: "30 p",
-    mobile: "30 p",
-    text: "8 p",
+  '+93': {
+    landline: '30 p',
+    mobile: '30 p',
+    text: '8 p',
   },
 
-  "+1": {
-    landline: "14 p",
-    mobile: "14 p",
-    text: "8 p",
+  '+1': {
+    landline: '14 p',
+    mobile: '14 p',
+    text: '8 p',
   },
 
-  "+355": {
-    landline: "60 p",
-    mobile: "60 p",
-    text: "8 p",
+  '+355': {
+    landline: '60 p',
+    mobile: '60 p',
+    text: '8 p',
   },
 
-  "+213": {
-    landline: "£ 1,5",
-    mobile: "£ 1,5",
-    text: "8 p",
+  '+213': {
+    landline: '£ 1,5',
+    mobile: '£ 1,5',
+    text: '8 p',
   },
 };
 
 const country = [
   {
-    label: "Abkhazia",
-    value: "+7840",
+    label: 'Abkhazia',
+    value: '+7840',
   },
 
   {
-    label: "Afghanistan",
-    value: "+93",
+    label: 'Afghanistan',
+    value: '+93',
   },
 
   {
-    label: "Alaska",
-    value: "+1",
+    label: 'Alaska',
+    value: '+1',
   },
 
   {
-    label: "Albania",
-    value: "+355",
+    label: 'Albania',
+    value: '+355',
   },
 
   {
-    label: "Algeria",
-    value: "+213",
+    label: 'Algeria',
+    value: '+213',
   },
 ];
 
 const InternationalCalls = () => {
   const [countrySelected, setCountrySelected] = useState({});
-  const [countries, setCountries] = useState([]);
-  const [calling, setCalling] = useState("");
+  const [calling, setCalling] = useState('');
+  const [searchInput, setSearchInput] = useState('');
+  const [countryResult, setCountryResult] = useState(country);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleChange = (e) => {
-    setCalling(e?.target?.value);
-    infoCountry[e?.target?.value];
-    console.log(infoCountry[e?.target?.value]);
-    setCountrySelected(infoCountry[e?.target?.value]);
+  const handleChange = (value, label) => {
+    setCalling(value);
+    setCountrySelected(infoCountry[value]);
+    setIsOpen(false);
+    setSearchInput(`${label} ${value}`);
   };
+
+  const handleSearchChange = (event) => {
+    setSearchInput(event?.target?.value);
+    if (event?.target?.value) {
+      setCountryResult(
+        country.filter((item) =>
+          `${item.label} ${item.value}`
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase())
+        )
+      );
+    } else {
+      setCountryResult(country);
+    }
+
+    // if (!isOpen) return;
+    setIsOpen(true);
+  };
+
+  const divRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (divRef.current && !divRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <section className="container-page md:px-0 px-2 mt-16">
       <div className="text-center">
-        <Link to={"#"} className="section-button">
+        <Link to={'#'} className="section-button">
           International Calls
         </Link>
       </div>
@@ -100,27 +137,43 @@ const InternationalCalls = () => {
           international rates to our members when calling from the UK.
         </p>
 
-        <div className="flex justify-center">
+        <div
+          className="flex justify-center relative w-full max-w-lg mx-auto"
+          ref={divRef}
+        >
           <input
-            className="px-2 py-2 placeholder:text-gray-800"
-            type="text"
+            className="w-full px-2 py-2 placeholder:text-gray-800"
+            type="search"
             placeholder="Where are you calling?"
-            defaultValue={calling}
-            disabled
+            onChange={handleSearchChange}
+            value={searchInput}
           />
-          <select
-            className="bg-black text-white py-2 w-24"
-            onChange={handleChange}
+          <button
+            className={` bg-black text-white`}
+            onClick={() => setIsOpen((prev) => !prev)}
           >
-            <option defaultValue={``}>-- Select --</option>
-            {country?.map((country, index) => {
-              return (
-                <option value={country?.value} key={index}>
-                  {country?.label}
-                </option>
-              );
-            })}
-          </select>
+            <IoMdArrowDropdown
+              size={50}
+              className={`${isOpen && 'rotate-180'} transition-transform`}
+            />
+          </button>
+
+          {isOpen && (
+            <ul className="absolute top-full w-full bg-red-500 mt-5">
+              {countryResult?.map((country, index) => {
+                return (
+                  <li key={index}>
+                    <button
+                      className="p-2 hover:bg-white w-full text-start"
+                      onClick={() => handleChange(country.value, country.label)}
+                    >
+                      {country?.label} ({country.value})
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
       </div>
 
