@@ -256,7 +256,7 @@ const Header = () => {
                           Activate your SIM
                         </a>
                       </li>
-                      <div className="h-[.1rem] w-full bg-gray-600 mx-5"></div>
+                      <div className="h-[.1rem] w-full bg-gray-600"></div>
                       <li>
                         <a href="#" className="block text-center w-full">
                           <img

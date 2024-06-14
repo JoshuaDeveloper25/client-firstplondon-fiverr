@@ -30,14 +30,14 @@ const Reviews = () => {
       <div className="grid gap-4 grid-cols-1 md:grid-cols-5">
         <article className="md:col-span-2 col-span-full max-w-md mx-auto sm:w-80">
           <div>
-            <h2 className="bg-black text-white  text-center text-xl font-bold py-2">
+            <h2 className="bg-black text-white rounded-t-md  text-center text-xl font-bold py-2">
               TalkTalk | Trustpilot
             </h2>
           </div>
 
           <div className="relative">
             <img
-            className="rounded-b-sm"
+            className="rounded-b-md"
               decoding="async"
               loading="lazy"
               src={greenBg}

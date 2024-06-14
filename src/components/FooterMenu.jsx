@@ -5,7 +5,7 @@ import login from "../assets/login.png";
 
 const FooterMenu = () => {
   return (
-    <ul className="lg:hidden text-center space-y-3 pt-4">
+    <ul className="lg:hidden text-center space-y-3 py-4 bg-gray-200">
       <li>
         <Link to="#">
           <img
@@ -28,7 +28,7 @@ const FooterMenu = () => {
           Activate your SIM
         </Link>
       </li>
-      <div className="h-[.1rem] w-full bg-gray-300 mx-5"></div>
+      <div className="h-[.1rem] w-full bg-gray-300"></div>
       <li>
         <Link to="#" className="block text-center w-full">
           <img

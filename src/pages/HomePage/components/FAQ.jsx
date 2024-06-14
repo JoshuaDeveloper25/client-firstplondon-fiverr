@@ -86,7 +86,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="container-page md:px-0 px-2">
+    <section className="container-page md:px-0 px-2 mt-24">
       <div className="text-center">
         <Link to={"#"} className="section-button">
           FAQ
@@ -99,7 +99,7 @@ const FAQ = () => {
         </div>
 
         <div className="self-center flex-1 md:ps-5 ps-0">
-          <h3 className="font-bold text-3xl text-purple-900">
+          <h3 className="font-bold text-3xl text-center text-[#8940D8]">
             For quick answers to your Talktalk questions, please consult our
             FAQs for solutions to common enquiries.
           </h3>

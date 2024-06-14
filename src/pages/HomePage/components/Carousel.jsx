@@ -1,50 +1,51 @@
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { FaCheck } from 'react-icons/fa';
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { FaCheck } from "react-icons/fa";
 
-import img from '../../../assets/gif2-transparente.gif';
+import img from "../../../assets/gif2-transparente.gif";
 
-import { GrNext } from 'react-icons/gr';
-import { PiQuestionLight } from 'react-icons/pi';
+import { GrNext } from "react-icons/gr";
+import { PiQuestionLight } from "react-icons/pi";
 
-import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import { useEffect, useState } from 'react';
-import Accordion from '../../../components/Accordion';
-import CardContent from '../../../components/CardContent';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { useEffect, useState } from "react";
+import Accordion from "../../../components/Accordion";
+import CardContent from "../../../components/CardContent";
 
 const data = [
   {
-    color: '#00afff',
+    color: "#00afff",
   },
   {
-    color: '#db00d6',
+    color: "#db00d6",
   },
   {
-    color: '#69e300',
+    color: "#69e300",
   },
   {
-    color: '#ffb700',
+    color: "#ffb700",
   },
   {
-    color: '#fc7979',
+    color: "#fc7979",
   },
   {
-    color: '#c57e37',
+    color: "#c57e37",
   },
   {
-    color: '#ebd000',
+    color: "#ebd000",
   },
   {
-    color: '#FF7F50',
+    color: "#FF7F50",
   },
 ];
 
 const Carousel = () => {
-  const [color, setColor] = useState('');
+  const [color, setColor] = useState("");
   const [isDragging, setIsDragging] = useState(false);
 
   const handleTouchMove = () => {
@@ -61,13 +62,15 @@ const Carousel = () => {
         <Swiper
           // install Swiper modules
           // navigation
-          modules={[Navigation]}
+          modules={[Navigation, Pagination]}
           spaceBetween={30}
-          slidesPerView={'auto'}
+          pagination={{ clickable: true }}
+          slidesPerView={"auto"}
           centeredSlides
+          controller
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="px-32 relative"
+          className="px-32 swiperDesktop static"
         >
           {data.map((item, idx) => (
             <SwiperSlide key={idx}>
@@ -119,15 +122,15 @@ const Card = ({ color, isActive, setColor, isDragging }) => {
     <div
       style={{ border: isActive ? `2px solid ${color}` : null }}
       className={`py-10 card rounded-xl text-white 
-      ${isActive ? 'bg-grayDark' : null}
-      ${isDragging ? 'removeML' : null}`}
+      ${isActive ? "bg-grayDark" : null}
+      ${isDragging ? "removeML" : null}`}
     >
       <div className="flex gap-5 h-full">
-        <div className={`${isActive ? 'flex-1' : 'card__imgBox'}`}>
+        <div className={`${isActive ? "flex-1" : "card__imgBox"}`}>
           <img
             src={img}
             alt=""
-            className={`"mx-auto object-contain" ${isActive ? 'h-56' : 'h-44'}`}
+            className={`"mx-auto object-contain" ${isActive ? "h-56" : "h-44"}`}
           />
         </div>
         <div className="card__content" style={{ flex: 2 }}>

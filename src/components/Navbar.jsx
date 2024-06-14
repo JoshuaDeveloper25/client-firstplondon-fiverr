@@ -16,7 +16,7 @@ import login from "../assets/login.png";
 import help from "../assets/help.png";
 
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import FooterMenu from "./FooterMenu";
 
 const dropdowns = [
@@ -75,7 +75,7 @@ const dropdowns = [
   {
     title: "Help",
     icon: help,
-    responsive: "lg:hidden",
+    link: "#",
   },
 ];
 
@@ -83,6 +83,22 @@ const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [menuResults, setMenuResults] = useState(dropdowns);
   const [isOpen, setIsOpen] = useState(false);
+
+  const divRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (divRef.current && !divRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event?.target?.value);
@@ -108,12 +124,13 @@ const Navbar = () => {
         />
 
         <div
+          ref={divRef}
           className={`fixed lg:static bg-white z-50 lg:min-h-0 min-h-svh w-full lg:max-w-full max-w-xs top-0 lg:-translate-x-[0] ${
             isOpen ? "-translate-x-[20rem]" : null
           } left-full`}
         >
-          <div className="lg:flex lg:space-y-0 space-y-4 lg:p-0 p-5 lg:gap-5 lg:justify-end lg:overflow-y-visible overflow-y-auto max-h-screen">
-            <div className="lg:hidden flex justify-end w-full cursor-pointer">
+          <div className="lg:flex lg:space-y-0 space-y-4 lg:p-5 p-0 lg:gap-5 lg:justify-end lg:overflow-y-visible overflow-y-auto max-h-screen">
+            <div className="lg:hidden flex justify-end w-full cursor-pointer lg:px-0 px-5 pt-5">
               <IoCloseOutline
                 onClick={() => setIsOpen(!isOpen)}
                 size={28}
@@ -121,7 +138,7 @@ const Navbar = () => {
               />
             </div>
 
-            <div className="lg:hidden">
+            <div className="lg:hidden lg:px-0 px-5">
               <input
                 placeholder="Search"
                 type="search"

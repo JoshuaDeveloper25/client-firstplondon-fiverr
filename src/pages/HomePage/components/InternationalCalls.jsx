@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const infoCountry = {
-  "+504": {
+  "+7840": {
     landline: "30 p",
     mobile: "30 p",
     text: "8 p",
@@ -38,24 +38,37 @@ const infoCountry = {
   },
 };
 
+const country = [
+  {
+    label: "Abkhazia",
+    value: "+7840",
+  },
+
+  {
+    label: "Afghanistan",
+    value: "+93",
+  },
+
+  {
+    label: "Alaska",
+    value: "+1",
+  },
+
+  {
+    label: "Albania",
+    value: "+355",
+  },
+
+  {
+    label: "Algeria",
+    value: "+213",
+  },
+];
+
 const InternationalCalls = () => {
   const [countrySelected, setCountrySelected] = useState({});
   const [countries, setCountries] = useState([]);
   const [calling, setCalling] = useState("");
-
-  useEffect(() => {
-    const fetchCountryData = async () => {
-      try {
-        const response = await axios.get("https://restcountries.com/v3.1/all");
-        const countries = await response.data;
-        setCountries(countries);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchCountryData();
-  }, []);
 
   const handleChange = (e) => {
     setCalling(e?.target?.value);
@@ -89,7 +102,7 @@ const InternationalCalls = () => {
 
         <div className="flex justify-center">
           <input
-            className="px-2 py-2"
+            className="px-2 py-2 placeholder:text-gray-800"
             type="text"
             placeholder="Where are you calling?"
             defaultValue={calling}
@@ -100,13 +113,10 @@ const InternationalCalls = () => {
             onChange={handleChange}
           >
             <option defaultValue={``}>-- Select --</option>
-            {countries?.map((country, index) => {
-              const { name } = country;
-              const union = country?.idd?.root + country?.idd?.suffixes?.[0];
-
+            {country?.map((country, index) => {
               return (
-                <option value={union} key={index}>
-                  {name?.common}
+                <option value={country?.value} key={index}>
+                  {country?.label}
                 </option>
               );
             })}

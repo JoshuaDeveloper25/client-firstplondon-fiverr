@@ -23,17 +23,30 @@ const Dropdown = ({ info }) => {
   }, []);
 
   return (
-    <div ref={divRef} className={`relative z-20 ${info?.responsive}`}>
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="text-[14px] font-bold montserrat hover:text-[#d22d8a] transition-all duration-300"
-      >
-        <span className="lg:hidden">
-          {<img className="inline w-8 me-2" src={info?.icon} />}
-        </span>{" "}
-        {info?.title}{" "}
-        {info?.links ? <IoIosArrowDown className="inline" /> : null}
-      </button>
+    <div ref={divRef} className={`lg:px-0 px-5 relative z-20 ${info?.responsive}`}>
+      {info?.link ? (
+        <Link
+          to={info?.link}
+          className="text-[14px] font-bold montserrat hover:text-[#d22d8a] transition-all duration-300"
+        >
+          <span className="lg:hidden">
+            {<img className="inline w-8 me-2" src={info?.icon} />}
+          </span>{" "}
+          {info?.title}{" "}
+          {info?.links ? <IoIosArrowDown className="inline" /> : null}
+        </Link>
+      ) : (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-[14px] font-bold montserrat hover:text-[#d22d8a] transition-all duration-300"
+        >
+          <span className="lg:hidden">
+            {<img className="inline w-8 me-2" src={info?.icon} />}
+          </span>{" "}
+          {info?.title}{" "}
+          {info?.links ? <IoIosArrowDown className="inline" /> : null}
+        </button>
+      )}
 
       {isOpen && !!info?.links?.length && (
         <div className="flex flex-col lg:flex-row lg:absolute right-0 top-full lg:gap-8 p-5 lg:w-[30rem] bg-white">

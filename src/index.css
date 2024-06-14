@@ -85,11 +85,19 @@ html {
 }
 
 .swiperModificado {
-  overflow: unset!important;
+  overflow: unset !important;
+}
+
+.swiperDesktop .swiper-pagination {
+  top: 103%!important;
+}
+
+.swiperDesktop.swiper {
+  position: static!important;
 }
 
 .swiperModificado .swiper-pagination {
-  top: 100%!important;
+  top: 103% !important;
 }
 
 .desktop .swiper-wrapper {

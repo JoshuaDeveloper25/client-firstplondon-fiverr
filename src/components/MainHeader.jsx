@@ -15,11 +15,14 @@ const MainHeader = () => {
             decoding="async"
           />
           <h3>4,1 - Best</h3>
-          <img src={oneStar} className="sm:block hidden w-6" loading="lazy" decoding="async" />
-          <h3 className="sm:block hidden">Trustpilot score - 29.809 reviews</h3>
+          <img src={oneStar} className="w-6" loading="lazy" decoding="async" />
+          <h3 className="">
+            Trustpilot score{" "}
+            <span className="sm:inline-block hidden">- 29.809 reviews</span>
+          </h3>
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 sm:block hidden">
           <Link className="flex items-center justify-end">
             <img
               className="w-8 me-3"
