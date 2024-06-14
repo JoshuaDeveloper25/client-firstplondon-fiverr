@@ -114,49 +114,51 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="container-page mx-4 bg-white px-4 py-4 rounded-md mt-5 mb-8">
-      <div className="flex items-center justify-between">
-        <img src={talktalk} className="h-10 block" />
-        <RxHamburgerMenu
-          onClick={() => setIsOpen(!isOpen)}
-          size={28}
-          className="cursor-pointer lg:hidden"
-        />
+    <div className="px-4">
+      <nav className="container-page bg-white px-4 py-4 rounded-md mt-5 mb-8">
+        <div className="flex items-center justify-between">
+          <img src={talktalk} className="h-10 block" />
+          <RxHamburgerMenu
+            onClick={() => setIsOpen(!isOpen)}
+            size={28}
+            className="cursor-pointer lg:hidden"
+          />
 
-        <div
-          ref={divRef}
-          className={`fixed lg:static bg-white z-50 lg:min-h-0 min-h-svh w-full lg:max-w-full max-w-xs top-0 lg:-translate-x-[0] ${
-            isOpen ? "-translate-x-[20rem]" : null
-          } left-full`}
-        >
-          <div className="lg:flex lg:space-y-0 space-y-4 lg:p-5 p-0 lg:gap-5 lg:justify-end lg:overflow-y-visible overflow-y-auto max-h-screen">
-            <div className="lg:hidden flex justify-end w-full cursor-pointer lg:px-0 px-5 pt-5">
-              <IoCloseOutline
-                onClick={() => setIsOpen(!isOpen)}
-                size={28}
-                className="lg:hidden text-red-500"
-              />
+          <div
+            ref={divRef}
+            className={`fixed lg:static bg-white z-50 lg:min-h-0 min-h-svh w-full lg:max-w-full max-w-xs top-0 lg:-translate-x-[0] ${
+              isOpen ? "-translate-x-[20rem]" : null
+            } left-full`}
+          >
+            <div className="lg:flex lg:space-y-0 space-y-4 lg:p-5 p-0 lg:gap-5 lg:justify-end lg:overflow-y-visible overflow-y-auto max-h-screen">
+              <div className="lg:hidden flex justify-end w-full cursor-pointer lg:px-0 px-5 pt-5">
+                <IoCloseOutline
+                  onClick={() => setIsOpen(!isOpen)}
+                  size={28}
+                  className="lg:hidden text-red-500"
+                />
+              </div>
+
+              <div className="lg:hidden lg:px-0 px-5">
+                <input
+                  placeholder="Search"
+                  type="search"
+                  className="bootstrap-input"
+                  value={searchTerm}
+                  onChange={handleSearchChange}
+                />
+              </div>
+
+              {menuResults?.map((item, index) => {
+                return <Dropdown key={index} info={item} />;
+              })}
+
+              <FooterMenu />
             </div>
-
-            <div className="lg:hidden lg:px-0 px-5">
-              <input
-                placeholder="Search"
-                type="search"
-                className="bootstrap-input"
-                value={searchTerm}
-                onChange={handleSearchChange}
-              />
-            </div>
-
-            {menuResults?.map((item, index) => {
-              return <Dropdown key={index} info={item} />;
-            })}
-
-            <FooterMenu />
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 
