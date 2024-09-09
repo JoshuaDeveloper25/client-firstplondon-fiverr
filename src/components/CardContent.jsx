@@ -1,22 +1,48 @@
-import { PiQuestionLight } from 'react-icons/pi';
-import img from '../assets/get-sim-home.svg';
-import { useState } from 'react';
-import Modal from './Modal';
+import { flexibleContractPlan, monthlyPlan, payAsYouGoPlan } from "../../data";
+import { PiQuestionLight } from "react-icons/pi";
+import img from "../assets/get-sim-home.svg";
+import { useState } from "react";
+import Modal from "./Modal";
 
-const CardContent = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const openModal = () => {
-    setIsOpen(true);
-  };
+const CardContent = ({ index }) => {
+  const [isOpen, setIsOpen] = useState(0);
 
   return (
     <>
-      {isOpen && <Modal setIsOpen={setIsOpen} />}
+      {isOpen === 1 && (
+        <>
+          <Modal
+            setIsOpen={setIsOpen}
+            title={flexibleContractPlan?.title}
+            description={flexibleContractPlan?.desc}
+          />
+        </>
+      )}
+
+      {isOpen === 2 && (
+        <>
+          <Modal
+            setIsOpen={setIsOpen}
+            title={monthlyPlan?.title}
+            description={monthlyPlan?.desc}
+          />
+        </>
+      )}
+
+      {isOpen === 3 && (
+        <>
+          <Modal
+            setIsOpen={setIsOpen}
+            title={payAsYouGoPlan?.title}
+            description={payAsYouGoPlan?.desc}
+          />
+        </>
+      )}
 
       <div>
         <h2 className="text-center text-lg font-semibold">
-          $20 per motnh gets you 30-40GB of data, depending on your plan
+          (#{index + 1}) $20 per motnh gets you 30-40GB of data, depending on
+          your plan
         </h2>
 
         <ul className="mt-4">
@@ -24,8 +50,8 @@ const CardContent = () => {
             <span>Flexible contract plan</span>
 
             <span className="inline-flex items-center gap-2">
-              40 GB data{' '}
-              <button onClick={openModal}>
+              40 GB data{" "}
+              <button onClick={() => setIsOpen(1)}>
                 <PiQuestionLight className="text-xl" />
               </button>
             </span>
@@ -34,8 +60,8 @@ const CardContent = () => {
             <span>Monthly Rolling plan</span>
 
             <span className="inline-flex items-center gap-2">
-              35 GB data{' '}
-              <button onClick={openModal}>
+              35 GB data{" "}
+              <button onClick={() => setIsOpen(2)}>
                 <PiQuestionLight className="text-xl" />
               </button>
             </span>
@@ -44,8 +70,8 @@ const CardContent = () => {
             <span>Pay as you go plan</span>
 
             <span className="inline-flex items-center gap-2">
-              30 GB data{' '}
-              <button onClick={openModal}>
+              30 GB data{" "}
+              <button onClick={() => setIsOpen(3)}>
                 <PiQuestionLight className="text-xl" />
               </button>
             </span>

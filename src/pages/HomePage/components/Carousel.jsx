@@ -1,13 +1,8 @@
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { FaCheck } from "react-icons/fa";
-
-import img from "../../../assets/gif2-transparente.gif";
-
-import { GrNext } from "react-icons/gr";
-import { PiQuestionLight } from "react-icons/pi";
-
 import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import img from "../../../assets/gif2-transparente.gif";
+import { GrNext } from "react-icons/gr";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,37 +11,14 @@ import "swiper/css/pagination";
 import { useEffect, useState } from "react";
 import Accordion from "../../../components/Accordion";
 import CardContent from "../../../components/CardContent";
-
-const data = [
-  {
-    color: "#00afff",
-  },
-  {
-    color: "#db00d6",
-  },
-  {
-    color: "#69e300",
-  },
-  {
-    color: "#ffb700",
-  },
-  {
-    color: "#fc7979",
-  },
-  {
-    color: "#c57e37",
-  },
-  {
-    color: "#ebd000",
-  },
-  {
-    color: "#FF7F50",
-  },
-];
+import { accordionSlider } from "../../../../data";
+import { Link } from "react-router-dom";
 
 const Carousel = () => {
-  const [color, setColor] = useState("");
+  const [accordionBox, setAccordionBox] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
+  const [swiperRef, setSwiperRef] = useState(null);
+  const [color, setColor] = useState("");
 
   const handleTouchMove = () => {
     setIsDragging(true);
@@ -66,24 +38,30 @@ const Carousel = () => {
           spaceBetween={30}
           pagination={{ clickable: true }}
           slidesPerView={"auto"}
+          onSwiper={setSwiperRef}
           centeredSlides
           controller
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           className="px-32 swiperDesktop static"
         >
-          {data.map((item, idx) => (
+          {accordionSlider.map((item, idx) => (
             <SwiperSlide key={idx}>
               {({ isActive }) => (
                 <Card
                   color={item.color}
                   isActive={isActive}
                   setColor={setColor}
+                  accordionContent={item?.accordionContent}
+                  setAccordionBox={setAccordionBox}
                   isDragging={isDragging}
+                  index={idx}
+                  swiperRef={swiperRef}
                 />
               )}
             </SwiperSlide>
           ))}
+
           <Arrows />
         </Swiper>
       </div>
@@ -100,10 +78,17 @@ const Carousel = () => {
             This plan includes
           </header>
           <div className="grid grid-cols-2 px-4 gap-y-4">
-            <Accordion colorArrow={color} />
-            <Accordion colorArrow={color} />
-            <Accordion colorArrow={color} />
+            {accordionBox?.map((item) => {
+              return <Accordion item={item} colorArrow={color} />;
+            })}
           </div>
+          <p className="text-center mt-5 text-base">
+            Talktalk's standard{" "}
+            <Link className="underline font-semibold" to={"#"} target="_blank">
+              Terms and Conditions
+            </Link>{" "}
+            apply.
+          </p>
         </div>
       </div>
     </div>
@@ -111,12 +96,30 @@ const Carousel = () => {
 };
 
 // eslint-disable-next-line react/prop-types
-const Card = ({ color, isActive, setColor, isDragging }) => {
+const Card = ({
+  color,
+  isActive,
+  setColor,
+  isDragging,
+  accordionContent,
+  setAccordionBox,
+  swiperRef,
+  index,
+}) => {
+  const slideTo = (index) => {
+    swiperRef.slideTo(index - 1, 0);
+  };
+
   useEffect(() => {
     if (isActive) {
       setColor(color);
+      setAccordionBox(accordionContent);
     }
   }, [isActive, color]);
+
+  const handleNextCard = () => {
+    slideTo(index + 1, 0);
+  };
 
   return (
     <div
@@ -129,12 +132,14 @@ const Card = ({ color, isActive, setColor, isDragging }) => {
         <div className={`${isActive ? "flex-1" : "card__imgBox"}`}>
           <img
             src={img}
-            alt=""
-            className={`"mx-auto object-contain" ${isActive ? "h-56" : "h-44"}`}
+            onClick={() => handleNextCard(index)}
+            className={`"mx-auto object-contain" ${
+              isActive ? "h-56" : "cursor-pointer h-44"
+            }`}
           />
         </div>
         <div className="card__content" style={{ flex: 2 }}>
-          <CardContent />
+          <CardContent index={index} />
         </div>
       </div>
     </div>

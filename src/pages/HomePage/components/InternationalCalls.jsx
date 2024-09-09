@@ -1,75 +1,16 @@
-import internationalCall from '../../../assets/international-calls.png';
-import landline from '../../../assets/landline.png';
-import mobile from '../../../assets/mobile.png';
-import { useEffect, useRef, useState } from 'react';
-import sms from '../../../assets/sms.png';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { IoMdArrowDropdown } from 'react-icons/io';
-
-const infoCountry = {
-  '+7840': {
-    landline: '30 p',
-    mobile: '30 p',
-    text: '8 p',
-  },
-
-  '+93': {
-    landline: '30 p',
-    mobile: '30 p',
-    text: '8 p',
-  },
-
-  '+1': {
-    landline: '14 p',
-    mobile: '14 p',
-    text: '8 p',
-  },
-
-  '+355': {
-    landline: '60 p',
-    mobile: '60 p',
-    text: '8 p',
-  },
-
-  '+213': {
-    landline: '£ 1,5',
-    mobile: '£ 1,5',
-    text: '8 p',
-  },
-};
-
-const country = [
-  {
-    label: 'Abkhazia',
-    value: '+7840',
-  },
-
-  {
-    label: 'Afghanistan',
-    value: '+93',
-  },
-
-  {
-    label: 'Alaska',
-    value: '+1',
-  },
-
-  {
-    label: 'Albania',
-    value: '+355',
-  },
-
-  {
-    label: 'Algeria',
-    value: '+213',
-  },
-];
+import internationalCall from "../../../assets/international-calls.png";
+import { country, infoCountry } from "../../../../data";
+import landline from "../../../assets/landline.png";
+import { useEffect, useRef, useState } from "react";
+import { IoMdArrowDropdown } from "react-icons/io";
+import mobile from "../../../assets/mobile.png";
+import sms from "../../../assets/sms.png";
+import { Link } from "react-router-dom";
 
 const InternationalCalls = () => {
   const [countrySelected, setCountrySelected] = useState({});
-  const [calling, setCalling] = useState('');
-  const [searchInput, setSearchInput] = useState('');
+  const [calling, setCalling] = useState("");
+  const [searchInput, setSearchInput] = useState("");
   const [countryResult, setCountryResult] = useState(country);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -107,17 +48,17 @@ const InternationalCalls = () => {
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   return (
     <section className="container-page md:px-0 px-2 mt-16">
       <div className="text-center">
-        <Link to={'#'} className="section-button">
+        <Link to={"#"} className="section-button">
           International Calls
         </Link>
       </div>
@@ -154,12 +95,12 @@ const InternationalCalls = () => {
           >
             <IoMdArrowDropdown
               size={50}
-              className={`${isOpen && 'rotate-180'} transition-transform`}
+              className={`${isOpen && "rotate-180"} transition-transform`}
             />
           </button>
 
           {isOpen && (
-            <ul className="absolute top-full w-full bg-white mt-5 max-h-64 overflow-auto">
+            <ul className="absolute top-full w-full bg-white mt-5 max-h-64 overflow-auto z-[9999]">
               {countryResult?.map((country, index) => {
                 return (
                   <li key={index}>
