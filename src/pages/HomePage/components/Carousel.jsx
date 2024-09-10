@@ -78,8 +78,8 @@ const Carousel = () => {
             This plan includes
           </header>
           <div className="grid grid-cols-2 px-4 gap-y-4">
-            {accordionBox?.map((item) => {
-              return <Accordion item={item} colorArrow={color} />;
+            {accordionBox?.map((item, index) => {
+              return <Accordion item={item} key={index} colorArrow={color} />;
             })}
           </div>
           <p className="text-center mt-5 text-base">
