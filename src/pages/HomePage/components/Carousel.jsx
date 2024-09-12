@@ -18,7 +18,12 @@ const Carousel = () => {
   const [accordionBox, setAccordionBox] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [swiperRef, setSwiperRef] = useState(null);
+  const [isOpen, setIsOpen] = useState(null);
   const [color, setColor] = useState("");
+
+  const onClick = (i) => {
+    setIsOpen(isOpen === i ? null : i);
+  };
 
   const handleTouchMove = () => {
     setIsDragging(true);
@@ -79,7 +84,16 @@ const Carousel = () => {
           </header>
           <div className="grid grid-cols-2 px-4 gap-y-4">
             {accordionBox?.map((item, index) => {
-              return <Accordion item={item} key={index} colorArrow={color} />;
+              return (
+                <Accordion
+                  item={item}
+                  index={index}
+                  key={index}
+                  colorArrow={color}
+                  isOpen={isOpen === index}
+                  toggle={() => onClick(index)}
+                />
+              );
             })}
           </div>
           <p className="text-center mt-5 text-base">

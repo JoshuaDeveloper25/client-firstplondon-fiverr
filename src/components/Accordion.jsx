@@ -1,15 +1,9 @@
-import { useState } from "react";
 import { IoIosArrowDropdownCircle } from "react-icons/io";
 
-const Accordion = ({ item, info, colorArrow }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const Accordion = ({ item, colorArrow, isOpen, toggle }) => {
   return (
     <div className="">
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center gap-2 w-full"
-      >
+      <button onClick={toggle} className="flex items-center gap-2 w-full">
         {" "}
         <span style={{ color: colorArrow }}>
           <IoIosArrowDropdownCircle />
@@ -23,10 +17,8 @@ const Accordion = ({ item, info, colorArrow }) => {
       >
         <div className="overflow-hidden">
           <div>
-            <div className="px-5 py-3">
-              <p>
-                {item?.desc}
-              </p>
+            <div className="text-base px-5 py-3">
+              <p>{item?.desc}</p>
             </div>
           </div>
         </div>

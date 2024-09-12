@@ -89,11 +89,11 @@ html {
 }
 
 .swiperDesktop .swiper-pagination {
-  top: 103%!important;
+  top: 103% !important;
 }
 
 .swiperDesktop.swiper {
-  position: static!important;
+  position: static !important;
 }
 
 .swiperModificado .swiper-pagination {
@@ -684,3 +684,7 @@ html:has(#active-side) {
     width: 15rem;
   }
 } */
+
+.swiperDesktop .swiper-wrapper {
+  transition-duration: 300ms !important;
+}
