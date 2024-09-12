@@ -3,7 +3,7 @@ import { IoIosArrowDropdownCircle } from "react-icons/io";
 const Accordion = ({ item, colorArrow, isOpen, toggle }) => {
   return (
     <div className="">
-      <button onClick={toggle} className="flex items-center gap-2 w-full">
+      <button onClick={toggle} className="md:text-[18px] text-lg flex items-center gap-2 w-full">
         {" "}
         <span style={{ color: colorArrow }}>
           <IoIosArrowDropdownCircle />
