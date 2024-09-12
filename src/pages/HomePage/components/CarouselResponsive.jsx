@@ -24,13 +24,6 @@ const CarouselResponsive = () => {
   const [swiperRef, setSwiperRef] = useState(null);
   const [color, setColor] = useState("");
 
-  const handleTouchMove = () => {
-    setIsDragging(true);
-  };
-
-  const handleTouchEnd = () => {
-    setIsDragging(false);
-  };
   // const slideTo = (index) => {
   //   if (swiper) swiper.slideTo(index);
   // };
@@ -44,8 +37,6 @@ const CarouselResponsive = () => {
           onSwiper={setSwiperRef}
           centeredSlides
           controller
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
           // breakpoints={{
           //   640: {
           //     slidesPerView: 3,
@@ -115,7 +106,7 @@ const Card = ({
   return (
     <div
       style={{ border: isActive ? `2px solid ${color}` : null }}
-      className={`py-10 card rounded-xl text-white 
+      className={`pt-10 card rounded-xl text-white 
         ${isActive ? "bg-grayDark" : null}
         ${isDragging ? "removeML" : null}`}
     >
@@ -171,7 +162,7 @@ const Card = ({
 
           <button
             onClick={() => setIsOpen((prev) => !prev)}
-            className="md:py-2 py-5 mt-5 bg-white text-black w-full flex justify-center items-center gap-2"
+            className="md:py-2 py-5 mt-5 bg-white text-black w-full flex justify-center items-center gap-2 rounded-b-xl"
           >
             View plan details
             <FaChevronDown
