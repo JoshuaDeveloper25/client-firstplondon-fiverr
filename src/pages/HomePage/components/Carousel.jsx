@@ -1,7 +1,6 @@
 // import Swiper core and required modules
 import { Swiper, SwiperSlide, useSwiper, useSwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import img from "../../../assets/gif2-transparente.gif";
 import { GrNext } from "react-icons/gr";
 
 // Import Swiper styles
@@ -62,6 +61,7 @@ const Carousel = () => {
                   isDragging={isDragging}
                   index={idx}
                   swiperRef={swiperRef}
+                  item={item}
                 />
               )}
             </SwiperSlide>
@@ -119,6 +119,7 @@ const Card = ({
   setAccordionBox,
   swiperRef,
   index,
+  item,
 }) => {
   const slideTo = (index) => {
     swiperRef.slideTo(index - 1, 0);
@@ -145,7 +146,7 @@ const Card = ({
       <div className="flex gap-5 h-full">
         <div className={`${isActive ? "flex-1" : "card__imgBox"}`}>
           <img
-            src={img}
+            src={item?.banner}
             onClick={() => handleNextCard(index)}
             className={`"mx-auto object-contain" ${
               isActive ? "h-56" : "cursor-pointer h-44"
@@ -153,7 +154,7 @@ const Card = ({
           />
         </div>
         <div className="card__content" style={{ flex: 2 }}>
-          <CardContent index={index} />
+          <CardContent item={item} index={index} />
         </div>
       </div>
     </div>

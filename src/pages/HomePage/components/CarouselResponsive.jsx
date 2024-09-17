@@ -2,8 +2,6 @@
 // import Swiper core and required modules
 import { Navigation, Pagination } from "swiper/modules";
 
-import img from "../../../assets/gif2-transparente.gif";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -55,6 +53,7 @@ const CarouselResponsive = () => {
                   isActive={isActive}
                   setColor={setColor}
                   accordionContent={item?.accordionContent}
+                  item={item}
                   setAccordionBox={setAccordionBox}
                   isDragging={isDragging}
                   index={idx}
@@ -80,6 +79,7 @@ const Card = ({
   swiperRef,
   index,
   accordionBox,
+  item,
 }) => {
   const [isOpenAccordion, setIsOpenAccordion] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -113,7 +113,7 @@ const Card = ({
       <div className="h-full">
         <div className={`${isActive ? "flex-1" : "card__imgBox"}`}>
           <img
-            src={img}
+            src={item?.banner}
             onClick={() => handleNextCard(index)}
             alt=""
             className={`mx-auto object-contain ${
@@ -123,7 +123,7 @@ const Card = ({
         </div>
         <div className="card__content mt-5" style={{ flex: 2 }}>
           <div className="px-5">
-            <CardContent index={index} />
+            <CardContent item={item} index={index} />
           </div>
 
           <div

@@ -4,7 +4,7 @@ import img from "../assets/get-sim-home.svg";
 import { useState } from "react";
 import Modal from "./Modal";
 
-const CardContent = ({ index }) => {
+const CardContent = ({ item, index }) => {
   const [isOpen, setIsOpen] = useState(0);
 
   return (
@@ -13,8 +13,8 @@ const CardContent = ({ index }) => {
         <>
           <Modal
             setIsOpen={setIsOpen}
-            title={flexibleContractPlan?.title}
-            description={flexibleContractPlan?.desc}
+            title={item?.planOne}
+            description={item?.modalDescriptionPlanOne}
           />
         </>
       )}
@@ -23,8 +23,8 @@ const CardContent = ({ index }) => {
         <>
           <Modal
             setIsOpen={setIsOpen}
-            title={monthlyPlan?.title}
-            description={monthlyPlan?.desc}
+            title={item?.planTwo}
+            description={item?.modalDescriptionPlanTwo}
           />
         </>
       )}
@@ -33,44 +33,43 @@ const CardContent = ({ index }) => {
         <>
           <Modal
             setIsOpen={setIsOpen}
-            title={payAsYouGoPlan?.title}
-            description={payAsYouGoPlan?.desc}
+            title={item?.planThree}
+            description={item?.modalDescriptionPlanThree}
           />
         </>
       )}
 
       <div>
         <h2 className="text-center text-lg font-semibold">
-          (#{index + 1}) $20 per motnh gets you 30-40GB of data, depending on
-          your plan
+          (#{index + 1}) {item?.title}
         </h2>
 
         <ul className="mt-4">
           <li className="flex justify-between border-2 border-dashed rounded-lg px-2 py-1 gap-2">
-            <span>Flexible contract plan</span>
+            <span>{item?.planOne}</span>
 
             <span className="inline-flex items-center gap-2">
-              40 GB data{" "}
+              {item?.sizePlan1}{" "}
               <button onClick={() => setIsOpen(1)}>
                 <PiQuestionLight className="text-xl" />
               </button>
             </span>
           </li>
           <li className="my-5 flex justify-between border-2 border-dashed rounded-lg px-2 py-1 gap-2">
-            <span>Monthly Rolling plan</span>
+            <span>{item?.planTwo}</span>
 
             <span className="inline-flex items-center gap-2">
-              35 GB data{" "}
+              {item?.sizePlan2}{" "}
               <button onClick={() => setIsOpen(2)}>
                 <PiQuestionLight className="text-xl" />
               </button>
             </span>
           </li>
           <li className="flex justify-between border-2 border-dashed rounded-lg px-2 py-1 gap-2">
-            <span>Pay as you go plan</span>
+            <span>{item?.planThree}</span>
 
             <span className="inline-flex items-center gap-2">
-              30 GB data{" "}
+              {item?.sizePlan3}{" "}
               <button onClick={() => setIsOpen(3)}>
                 <PiQuestionLight className="text-xl" />
               </button>
